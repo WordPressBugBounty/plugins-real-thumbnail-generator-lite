@@ -1,0 +1,1 @@
+# plugins-real-thumbnail-generator-lite
