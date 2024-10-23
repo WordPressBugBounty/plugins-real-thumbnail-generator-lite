@@ -1,8 +1,8 @@
 <?php
-// Cachebusters generated on 2024-09-26 07:17:41
+// Cachebusters generated on 2024-10-23 10:30:52
 return [
 	'src/public/dist/admin.css'=> '39dee4a2c829acb24da62a019968c20f',
-	'src/public/dist/admin.css.map'=> '4151fab6be181a350ff1f04729082c73',
+	'src/public/dist/admin.css.map'=> '05c04203b3f8c994d3ff42385eea8911',
 	'src/public/dist/admin.lite.js'=> '67163bbaf84146fea0f6456495b67712',
 	'src/public/dist/admin.lite.js.map'=> 'f9c1ae8236e19a1a9d3ac50bb44eb882',
 	'src/public/dist/admin.lite.js.pot'=> '219383150105407fdc04853f692d2259',

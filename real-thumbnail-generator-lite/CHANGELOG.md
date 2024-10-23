@@ -3,6 +3,131 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.6.90 (2024-10-23)
+
+
+### Code Refactoring
+
+* remove jest and phpunit from packages which do not use it (CU-8695mtnyu)
+
+
+<details><summary>Dependency updates @devowl-wp/freemium 1.3.91</summary>
+
+
+**_Purpose of dependency:_** _Make your plugin to a freemium plugin with predefined Envato support_
+##### Code Refactoring
+
+* remove jest and phpunit from packages which do not use it (CU-8695mtnyu)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-product-manager-wp-client 1.19.28</summary>
+
+
+**_Purpose of dependency:_** _A WordPress client for Real Product Manager_
+##### Bug Fixes
+
+* do not invalidate license for elb.amazonaws.com (CU-86964ynay)
+
+
+##### Code Refactoring
+
+* remove jest and phpunit from packages which do not use it (CU-8695mtnyu)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-utils 1.13.12</summary>
+
+
+**_Purpose of dependency:_** _Create cross-selling ads, about page, rating and newsletter input for WP Real plugins._
+##### Bug Fixes
+
+* uasort(): Argument [#1](https://git.owlinfra.de/devowlio/devowl-wp/issues/1) () must be of type array, null given in (CU-86967g2a2)
+
+
+##### Code Refactoring
+
+* remove jest and phpunit from packages which do not use it (CU-8695mtnyu)</details>
+
+<details><summary>Dependency updates @devowl-wp/utils 1.19.12</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Bug Fixes
+
+* content blocker cannot be saved with empty description text (CU-869625w64)
+
+
+##### Code Refactoring
+
+* remove jest and phpunit from packages which do not use it (CU-8695mtnyu)</details>
+
+<details><summary>Development dependency update @devowl-wp/api 0.5.27</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Code Refactoring
+
+* remove jest and phpunit from packages which do not use it (CU-8695mtnyu)</details>
+
+<details><summary>Development dependency update @devowl-wp/composer-licenses 0.1.17</summary>
+
+
+**_Purpose of dependency:_** _Helper functionalities for your composer project to validate licenses and generate a disclaimer._
+##### Code Refactoring
+
+* remove jest and phpunit from packages which do not use it (CU-8695mtnyu)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.6.6</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Code Refactoring
+
+* remove jest and phpunit from packages which do not use it (CU-8695mtnyu)
+
+
+##### Maintenance
+
+* migrate away from envkey-source to infisical (CU-86959qnq2)
+
+
+##### Tests
+
+* port fast-html-tag and headless-content-blocker to TypeScript with Vitest tests (CU-8695mtnyu)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-localization 0.8.9</summary>
+
+
+**_Purpose of dependency:_** _Provide a CLI to push and pull localization files from different translation management systems._
+##### Bug Fixes
+
+* make retry mechanism work with FormData (CU-8695kguk7)</details>
+
+<details><summary>Development dependency update @devowl-wp/eslint-config 0.2.10</summary>
+
+
+**_Purpose of dependency:_** _Provide eslint configuration for our complete monorepo._
+##### Tests
+
+* port fast-html-tag and headless-content-blocker to TypeScript with Vitest tests (CU-8695mtnyu)</details>
+
+<details><summary>Development dependency update @devowl-wp/node-gitlab-ci 0.7.16</summary>
+
+
+**_Purpose of dependency:_** _Create dynamic GitLab CI pipelines in JavaScript or TypeScript for each project. Reuse and inherit instructions and avoid duplicate code!_
+##### Maintenance
+
+* migrate away from envkey-source to infisical (CU-86959qnq2)</details>
+
+<details><summary>Development dependency update @devowl-wp/phpcs-config 0.1.16</summary>
+
+
+**_Purpose of dependency:_** _Predefined functionalities for PHPCS._
+##### Code Refactoring
+
+* remove jest and phpunit from packages which do not use it (CU-8695mtnyu)</details>
+
+
+
+
+
 ## 2.6.89 (2024-09-26)
 
 **Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
