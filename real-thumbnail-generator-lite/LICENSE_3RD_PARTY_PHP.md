@@ -30,7 +30,7 @@ Copyright (c) 2017-2019 Colin O'Dell <colinodell@gmail.com>. Based on https://gi
 > THE SOFTWARE.
 
 
-### devowl-wp/freemium (Version dev-develop | no sha)
+### devowl-wp/freemium (Version dev-wordpress | no sha)
 Make your plugin to a freemium plugin with predefined Envato support
 Homepage: Not configured.
 Licenses Used: GPL-3.0-or-later
@@ -43,7 +43,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-### devowl-wp/real-product-manager-wp-client (Version dev-develop | no sha)
+### devowl-wp/real-product-manager-wp-client (Version dev-wordpress | no sha)
 A WordPress client for Real Product Manager
 Homepage: Not configured.
 Licenses Used: GPL-3.0-or-later
@@ -56,7 +56,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-### devowl-wp/real-utils (Version dev-develop | no sha)
+### devowl-wp/real-utils (Version dev-wordpress | no sha)
 Create cross-selling ads, about page, rating and newsletter input for WP Real plugins.
 Homepage: Not configured.
 Licenses Used: GPL-3.0-or-later
@@ -69,7 +69,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>.
 
-### devowl-wp/utils (Version dev-develop | no sha)
+### devowl-wp/utils (Version dev-wordpress | no sha)
 Utility functionality for all your WordPress plugins.
 Homepage: Not configured.
 Licenses Used: GPL-3.0-or-later

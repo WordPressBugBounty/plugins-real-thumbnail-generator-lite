@@ -3,6 +3,52 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.6.91 (2024-11-07)
+
+
+### Documentation
+
+* update readme for wordpress.org (CU-869657pwb)
+
+
+<details><summary>Dependency updates @devowl-wp/utils 1.19.13</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Performance Improvements
+
+* too much memory consumed when downloading TCF GVL vendor list and services (CU-8696eq8k1)</details>
+
+<details><summary>Development dependency update @devowl-wp/api 1.0.0</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Maintenance
+
+* initial release (CU-869656drt)
+
+
+##### BREAKING CHANGES
+
+* With Real Cookie Banner v5 we enter v1 of dependency packages.</details>
+
+<details><summary>Development dependency update @devowl-wp/react-utils 1.0.0</summary>
+
+
+**_Purpose of dependency:_** _Provide various React utils, side effect free and tree shakeable._
+##### Maintenance
+
+* initial release (CU-869656drt)
+
+
+##### BREAKING CHANGES
+
+* With Real Cookie Banner v5 we enter v1 of dependency packages.</details>
+
+
+
+
+
 ## 2.6.90 (2024-10-23)
 
 
