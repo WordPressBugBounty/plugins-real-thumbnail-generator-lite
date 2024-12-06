@@ -1,5 +1,5 @@
 <?php
-// Cachebusters generated on 2024-11-07 06:38:17
+// Cachebusters generated on 2024-12-06 07:17:23
 return [
 	'@ant-design/icons' => '5.3.7',
 	'antd' => '5.18.1',
