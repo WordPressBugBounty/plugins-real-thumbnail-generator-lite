@@ -1,4 +1,4 @@
-# Copyright (C) 2024 devowl.io
+# Copyright (C) 2025 devowl.io
 # This file is distributed under the same license as the Real Thumbnail Generator plugin.
 msgid ""
 msgstr ""
