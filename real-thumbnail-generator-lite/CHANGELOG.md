@@ -3,6 +3,73 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.6.94 (2025-02-06)
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Dependency updates @devowl-wp/real-product-manager-wp-client 1.19.32</summary>
+
+
+**_Purpose of dependency:_** _A WordPress client for Real Product Manager_
+##### Maintenance
+
+* typo</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.6.7</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Bug Fixes
+
+* always validate docker images when built (CU-8696heugb)
+
+
+##### Build System
+
+* streamline docker and setup.sh into a Taskfile.setup.yml (CU-8696k3cct)
+
+
+##### Continuous Integration
+
+* always validate and try to fix docker images (CU-8697pj0tx)
+* validate docker images with new CNCF scopes and socket hang up in Weblate translations (CU-8697pj0tx)
+
+
+##### Tests
+
+* make static files inclusive domain mapping available in playwright tests and create first test (CU-8695mtnyu)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-localization 0.8.11</summary>
+
+
+**_Purpose of dependency:_** _Provide a CLI to push and pull localization files from different translation management systems._
+##### Bug Fixes
+
+* retry weblate request on socket hang up while uploading a file (CU-8695kguk7)
+
+
+##### Continuous Integration
+
+* validate docker images with new CNCF scopes and socket hang up in Weblate translations (CU-8697pj0tx)</details>
+
+<details><summary>Development dependency update @devowl-wp/node-gitlab-ci 0.8.0</summary>
+
+
+**_Purpose of dependency:_** _Create dynamic GitLab CI pipelines in JavaScript or TypeScript for each project. Reuse and inherit instructions and avoid duplicate code!_
+##### Continuous Integration
+
+* validate docker images with new CNCF scopes and socket hang up in Weblate translations (CU-8697pj0tx)
+
+
+##### Features
+
+* new command merge-request-tree (also as VSCode task) to visually show Merge Requests (CU-8692xtha4)</details>
+
+
+
+
+
 ## 2.6.93 (2025-01-14)
 
 
