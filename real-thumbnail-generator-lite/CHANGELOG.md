@@ -3,6 +3,378 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.6.103 (2025-04-14)
+
+
+### Maintenance
+
+* compatibility with WordPress 6.8 (CU-8698n6jp7)
+* compatibility with WordPress 6.8 (CU-8698n6jp7)
+
+
+
+
+
+
+
+## 2.6.102 (2025-04-08) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+
+### Maintenance
+
+* migrate to docker swarm for multi-instance capability (CU-8697hja46)
+
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.7.2</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Maintenance
+
+* create owlreview.de certificates instead of swarm.owlreview.de (CU-8697hja46)
+* migrate to docker swarm for multi-instance capability (CU-8697hja46)</details>
+
+<details><summary>Development dependency update @devowl-wp/node-gitlab-ci 0.8.4</summary>
+
+
+**_Purpose of dependency:_** _Create dynamic GitLab CI pipelines in JavaScript or TypeScript for each project. Reuse and inherit instructions and avoid duplicate code!_
+##### Maintenance
+
+* migrate to docker swarm for multi-instance capability (CU-8697hja46)</details>
+
+
+
+
+
+## 2.6.101 (2025-04-02) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+
+
+
+
+
+## 2.6.100 (2025-03-27) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+
+### Code Refactoring
+
+* update ESLint to v9, organize imports, and refactor imports for ESM preparation (CU-8694tbwme)
+
+
+<details><summary>Dependency updates @devowl-wp/freemium 1.3.101</summary>
+
+
+**_Purpose of dependency:_** _Make your plugin to a freemium plugin with predefined Envato support_
+##### Code Refactoring
+
+* update ESLint to v9, organize imports, and refactor imports for ESM preparation (CU-8694tbwme)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-product-manager-wp-client 1.19.38</summary>
+
+
+**_Purpose of dependency:_** _A WordPress client for Real Product Manager_
+##### Code Refactoring
+
+* update ESLint to v9, organize imports, and refactor imports for ESM preparation (CU-8694tbwme)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-utils 1.13.22</summary>
+
+
+**_Purpose of dependency:_** _Create cross-selling ads, about page, rating and newsletter input for WP Real plugins._
+##### Code Refactoring
+
+* update ESLint to v9, organize imports, and refactor imports for ESM preparation (CU-8694tbwme)</details>
+
+<details><summary>Dependency updates @devowl-wp/utils 1.19.22</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Code Refactoring
+
+* update ESLint to v9, organize imports, and refactor imports for ESM preparation (CU-8694tbwme)</details>
+
+<details><summary>Development dependency update @devowl-wp/api 1.1.1</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Code Refactoring
+
+* update ESLint to v9, organize imports, and refactor imports for ESM preparation (CU-8694tbwme)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.7.1</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Code Refactoring
+
+* update ESLint to v9, organize imports, and refactor imports for ESM preparation (CU-8694tbwme)
+
+
+##### Continuous Integration
+
+* create wildcard certificate for owlsrv.de (CU-8697hja46)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-localization 0.8.15</summary>
+
+
+**_Purpose of dependency:_** _Provide a CLI to push and pull localization files from different translation management systems._
+##### Bug Fixes
+
+* retry up to 10 minutes when component is locked in weblate (CU-8695kguk7)
+
+
+##### Code Refactoring
+
+* update ESLint to v9, organize imports, and refactor imports for ESM preparation (CU-8694tbwme)</details>
+
+<details><summary>Development dependency update @devowl-wp/eslint-config 0.2.12</summary>
+
+
+**_Purpose of dependency:_** _Provide eslint configuration for our complete monorepo._
+##### Code Refactoring
+
+* update ESLint to v9, organize imports, and refactor imports for ESM preparation (CU-8694tbwme)</details>
+
+<details><summary>Development dependency update @devowl-wp/monorepo-utils 0.2.10</summary>
+
+
+**_Purpose of dependency:_** _Predefined monorepo utilities and tasks._
+##### Code Refactoring
+
+* update ESLint to v9, organize imports, and refactor imports for ESM preparation (CU-8694tbwme)</details>
+
+<details><summary>Development dependency update @devowl-wp/node-gitlab-ci 0.8.3</summary>
+
+
+**_Purpose of dependency:_** _Create dynamic GitLab CI pipelines in JavaScript or TypeScript for each project. Reuse and inherit instructions and avoid duplicate code!_
+##### Code Refactoring
+
+* update ESLint to v9, organize imports, and refactor imports for ESM preparation (CU-8694tbwme)</details>
+
+<details><summary>Development dependency update @devowl-wp/react-utils 1.0.4</summary>
+
+
+**_Purpose of dependency:_** _Provide various React utils, side effect free and tree shakeable._
+##### Code Refactoring
+
+* update ESLint to v9, organize imports, and refactor imports for ESM preparation (CU-8694tbwme)</details>
+
+<details><summary>Development dependency update @devowl-wp/regexp-translation-extractor 0.2.35</summary>
+
+
+**_Purpose of dependency:_** _Provide a performant translation extractor based on regular expression._
+##### Code Refactoring
+
+* update ESLint to v9, organize imports, and refactor imports for ESM preparation (CU-8694tbwme)</details>
+
+<details><summary>Development dependency update @devowl-wp/ts-config 0.1.13</summary>
+
+
+**_Purpose of dependency:_** _Predefined compiler options for our backends._
+##### Code Refactoring
+
+* update ESLint to v9, organize imports, and refactor imports for ESM preparation (CU-8694tbwme)</details>
+
+<details><summary>Development dependency update @devowl-wp/webpack-config 0.2.39</summary>
+
+
+**_Purpose of dependency:_** _Webpack config builder for multiple ecosystems like standalone React frontends, Antd, Preact and WordPress._
+##### Code Refactoring
+
+* update ESLint to v9, organize imports, and refactor imports for ESM preparation (CU-8694tbwme)</details>
+
+
+
+
+
+## 2.6.99 (2025-03-19) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Dependency updates @devowl-wp/freemium 1.3.100</summary>
+
+
+**_Purpose of dependency:_** _Make your plugin to a freemium plugin with predefined Envato support_
+##### Bug Fixes
+
+* invalidate the database scheme when upgrading from free to PRO version (CU-8697zkqjj)</details>
+
+<details><summary>Dependency updates @devowl-wp/utils 1.19.21</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Bug Fixes
+
+* invalidate the database scheme when upgrading from free to PRO version (CU-8697zkqjj)</details>
+
+
+
+
+
+## 2.6.98 (2025-03-04) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.1.0</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* corrected calculation full machine translation and introduce flag ignoreOnMachineTranslation (CU-8692xtha4)
+* enhance machine translation with granular translation options (CU-8692xtha4)
+* introduce machine translation status (CU-8692xtha4)
+
+
+##### Features
+
+* introduce fully machine translated flag to translation status (CU-8692xtha4)
+* introduce machine translation including relational metadata service WiP (CU-8692xtha4)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.7.0</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Continuous Integration
+
+* build docker containers only after the install job (CU-8697hja46)
+* generate production certificates for devowl.io and owlinfra.de (CU-8697hja46)
+* generate production Lets Encrypt certificates instead of staging server (CU-8697hja46)
+
+
+##### Features
+
+* run develop pipeline which creates review app certificates on new branch (CU-8697hja46)</details>
+
+<details><summary>Development dependency update @devowl-wp/eslint-config 0.2.11</summary>
+
+
+**_Purpose of dependency:_** _Provide eslint configuration for our complete monorepo._
+##### Maintenance
+
+* implement transaction handling in email and storage operations, update ESLint rules for ORM CUD methods (CU-861mfub3j)</details>
+
+<details><summary>Development dependency update @devowl-wp/react-utils 1.0.3</summary>
+
+
+**_Purpose of dependency:_** _Provide various React utils, side effect free and tree shakeable._
+##### Bug Fixes
+
+* show a notice when a template is machine translated (CU-8692xtha4)</details>
+
+<details><summary>Development dependency update @devowl-wp/webpack-config 0.2.38</summary>
+
+
+**_Purpose of dependency:_** _Webpack config builder for multiple ecosystems like standalone React frontends, Antd, Preact and WordPress._
+##### Build System
+
+* exclude @antv/g2 resources from being inline required as it leads to issues when rendering charts (CU-8695xwj6u)</details>
+
+
+
+
+
+## 2.6.97 (2025-02-25) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.6.8</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Continuous Integration
+
+* create checksum over all certificates (CU-8697hja46)
+* generate certificates for swarm revie apps (CU-8697hja46)
+* generate regularily certificates with go-acme/lego for our CI runners (CU-8697hja46)
+* generate regularily wildcard certificates with go-acme/lego for our CI runners (CU-8697hja46)
+* remove orphan certificates (CU-8697hja46)
+* use home-runner for WordPress.org push (CU-86980hdd8)</details>
+
+<details><summary>Development dependency update @devowl-wp/node-gitlab-ci 0.8.1</summary>
+
+
+**_Purpose of dependency:_** _Create dynamic GitLab CI pipelines in JavaScript or TypeScript for each project. Reuse and inherit instructions and avoid duplicate code!_
+##### Continuous Integration
+
+* generate certificates for swarm revie apps (CU-8697hja46)</details>
+
+
+
+
+
+## 2.6.96 (2025-02-20) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/continuous-localization 0.8.12</summary>
+
+
+**_Purpose of dependency:_** _Provide a CLI to push and pull localization files from different translation management systems._
+##### Maintenance
+
+* console log weblate error message (CU-8695kguk7)</details>
+
+
+
+
+
+## 2.6.95 (2025-02-17) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Dependency updates @devowl-wp/freemium 1.3.96</summary>
+
+
+**_Purpose of dependency:_** _Make your plugin to a freemium plugin with predefined Envato support_
+##### Maintenance
+
+* upgrade to PNPM 10 (CU-8697je0ta)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-utils 1.13.17</summary>
+
+
+**_Purpose of dependency:_** _Create cross-selling ads, about page, rating and newsletter input for WP Real plugins._
+##### Maintenance
+
+* upgrade to PNPM 10 (CU-8697je0ta)</details>
+
+<details><summary>Dependency updates @devowl-wp/utils 1.19.17</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Maintenance
+
+* upgrade to PNPM 10 (CU-8697je0ta)</details>
+
+
+
+
+
 ## 2.6.94 (2025-02-06)
 
 **Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
