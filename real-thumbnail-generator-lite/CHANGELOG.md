@@ -3,6 +3,120 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.6.106 (2025-05-06)
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Dependency updates @devowl-wp/real-utils 1.13.27</summary>
+
+
+**_Purpose of dependency:_** _Create cross-selling ads, about page, rating and newsletter input for WP Real plugins._
+##### Bug Fixes
+
+* optimize welcome page after installing a plugin (CU-8697rd0b8)</details>
+
+<details><summary>Dependency updates @devowl-wp/utils 1.19.27</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Bug Fixes
+
+* fallback for anonymous_localize_script with random fallback key (CU-8697fw0r4)
+
+
+##### Performance Improvements
+
+* validate JSON before using JSON5 (CU-8698t43qg)</details>
+
+
+
+
+
+## 2.6.105 (2025-04-25) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.7.3</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Continuous Integration
+
+* connect to REVIEW_APP ssh agent (CU-8698fyv1c)
+* connect to REVIEW_APP ssh agent (CU-8698fyv1c)
+* use GIT_STRATEGY none to fetch the commit in review stop job (CU-8698fyv1c)</details>
+
+<details><summary>Development dependency update @devowl-wp/eslint-config 0.2.13</summary>
+
+
+**_Purpose of dependency:_** _Provide eslint configuration for our complete monorepo._
+##### Bug Fixes
+
+* quill editor and WYSIWYG editors are not rendered (CU-8698tv43q)</details>
+
+
+
+
+
+## 2.6.104 (2025-04-17) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+
+### Maintenance
+
+* update to Weblate 5.11 and use new automattic format (CU-31976hv)
+
+
+<details><summary>Dependency updates @devowl-wp/freemium 1.3.104</summary>
+
+
+**_Purpose of dependency:_** _Make your plugin to a freemium plugin with predefined Envato support_
+##### Maintenance
+
+* update to Weblate 5.11 and use new automattic format (CU-31976hv)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-product-manager-wp-client 1.19.41</summary>
+
+
+**_Purpose of dependency:_** _A WordPress client for Real Product Manager_
+##### Maintenance
+
+* update to Weblate 5.11 and use new automattic format (CU-31976hv)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-utils 1.13.25</summary>
+
+
+**_Purpose of dependency:_** _Create cross-selling ads, about page, rating and newsletter input for WP Real plugins._
+##### Maintenance
+
+* update to Weblate 5.11 and use new automattic format (CU-31976hv)</details>
+
+<details><summary>Dependency updates @devowl-wp/utils 1.19.25</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Maintenance
+
+* update to Weblate 5.11 and use new automattic format (CU-31976hv)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-localization 0.8.17</summary>
+
+
+**_Purpose of dependency:_** _Provide a CLI to push and pull localization files from different translation management systems._
+##### Bug Fixes
+
+* recreate FormData instance on every retry when uploading en file (CU-31976hv)
+* weblate 5.11 is not immediatly returning task_url when creating a component (CU-31976hv)</details>
+
+
+
+
+
 ## 2.6.103 (2025-04-14)
 
 
