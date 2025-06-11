@@ -3,6 +3,220 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.6.109 (2025-06-11)
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Dependency updates @devowl-wp/real-product-manager-wp-client 1.19.46</summary>
+
+
+**_Purpose of dependency:_** _A WordPress client for Real Product Manager_
+##### Maintenance
+
+* replace links with changed slugs (CU-86973be3f)</details>
+
+
+
+
+
+## 2.6.108 (2025-05-15) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.7.5</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Build System
+
+* add support for Cloudflare workers through wrangler CLI (CU-8698nqyb0)
+
+
+##### Continuous Integration
+
+* deploy Cloudflare workers in master and develop environment (CU-8698nqyb0)
+* make Cloudflare worker builds available in review apps through own docker image packaged with Wrangler (CU-8698nqyb0)</details>
+
+<details><summary>Development dependency update @devowl-wp/eslint-config 0.2.15</summary>
+
+
+**_Purpose of dependency:_** _Provide eslint configuration for our complete monorepo._
+##### Build System
+
+* add support for Cloudflare workers through wrangler CLI (CU-8698nqyb0)</details>
+
+<details><summary>Development dependency update @devowl-wp/ts-config 0.1.15</summary>
+
+
+**_Purpose of dependency:_** _Predefined compiler options for our backends._
+##### Build System
+
+* add support for Cloudflare workers through wrangler CLI (CU-8698nqyb0)</details>
+
+
+
+
+
+## 2.6.107 (2025-05-13) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+
+### Code Refactoring
+
+* use lint-staged with correct monorepo support (CU-8699154vj)
+
+
+<details><summary>Dependency updates @devowl-wp/freemium 1.3.107</summary>
+
+
+**_Purpose of dependency:_** _Make your plugin to a freemium plugin with predefined Envato support_
+##### Code Refactoring
+
+* use lint-staged with correct monorepo support (CU-8699154vj)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-product-manager-wp-client 1.19.44</summary>
+
+
+**_Purpose of dependency:_** _A WordPress client for Real Product Manager_
+##### Code Refactoring
+
+* use lint-staged with correct monorepo support (CU-8699154vj)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-utils 1.13.28</summary>
+
+
+**_Purpose of dependency:_** _Create cross-selling ads, about page, rating and newsletter input for WP Real plugins._
+##### Code Refactoring
+
+* use lint-staged with correct monorepo support (CU-8699154vj)</details>
+
+<details><summary>Dependency updates @devowl-wp/utils 1.19.28</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Code Refactoring
+
+* use lint-staged with correct monorepo support (CU-8699154vj)</details>
+
+<details><summary>Development dependency update @devowl-wp/api 1.1.4</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Code Refactoring
+
+* use lint-staged with correct monorepo support (CU-8699154vj)</details>
+
+<details><summary>Development dependency update @devowl-wp/composer-licenses 0.1.18</summary>
+
+
+**_Purpose of dependency:_** _Helper functionalities for your composer project to validate licenses and generate a disclaimer._
+##### Code Refactoring
+
+* use lint-staged with correct monorepo support (CU-8699154vj)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.7.4</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Code Refactoring
+
+* move internal apps to our monorepo codebase and introduce swarm (CU-31mn75v)
+* use lint-staged with correct monorepo support (CU-8699154vj)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-localization 0.8.19</summary>
+
+
+**_Purpose of dependency:_** _Provide a CLI to push and pull localization files from different translation management systems._
+##### Code Refactoring
+
+* use lint-staged with correct monorepo support (CU-8699154vj)</details>
+
+<details><summary>Development dependency update @devowl-wp/eslint-config 0.2.14</summary>
+
+
+**_Purpose of dependency:_** _Provide eslint configuration for our complete monorepo._
+##### Code Refactoring
+
+* use lint-staged with correct monorepo support (CU-8699154vj)</details>
+
+<details><summary>Development dependency update @devowl-wp/monorepo-utils 0.2.13</summary>
+
+
+**_Purpose of dependency:_** _Predefined monorepo utilities and tasks._
+##### Bug Fixes
+
+* use first mounted container (CU-8694v2pwc)
+
+
+##### Code Refactoring
+
+* use lint-staged with correct monorepo support (CU-8699154vj)</details>
+
+<details><summary>Development dependency update @devowl-wp/node-gitlab-ci 0.8.6</summary>
+
+
+**_Purpose of dependency:_** _Create dynamic GitLab CI pipelines in JavaScript or TypeScript for each project. Reuse and inherit instructions and avoid duplicate code!_
+##### Code Refactoring
+
+* use lint-staged with correct monorepo support (CU-8699154vj)</details>
+
+<details><summary>Development dependency update @devowl-wp/npm-licenses 0.1.14</summary>
+
+
+**_Purpose of dependency:_** _Helper functionalities for your project to validate licenses and generate a disclaimer._
+##### Code Refactoring
+
+* use lint-staged with correct monorepo support (CU-8699154vj)</details>
+
+<details><summary>Development dependency update @devowl-wp/phpcs-config 0.1.17</summary>
+
+
+**_Purpose of dependency:_** _Predefined functionalities for PHPCS._
+##### Code Refactoring
+
+* use lint-staged with correct monorepo support (CU-8699154vj)</details>
+
+<details><summary>Development dependency update @devowl-wp/react-utils 1.0.7</summary>
+
+
+**_Purpose of dependency:_** _Provide various React utils, side effect free and tree shakeable._
+##### Code Refactoring
+
+* use lint-staged with correct monorepo support (CU-8699154vj)</details>
+
+<details><summary>Development dependency update @devowl-wp/regexp-translation-extractor 0.2.38</summary>
+
+
+**_Purpose of dependency:_** _Provide a performant translation extractor based on regular expression._
+##### Code Refactoring
+
+* use lint-staged with correct monorepo support (CU-8699154vj)</details>
+
+<details><summary>Development dependency update @devowl-wp/ts-config 0.1.14</summary>
+
+
+**_Purpose of dependency:_** _Predefined compiler options for our backends._
+##### Code Refactoring
+
+* use lint-staged with correct monorepo support (CU-8699154vj)</details>
+
+<details><summary>Development dependency update @devowl-wp/webpack-config 0.2.42</summary>
+
+
+**_Purpose of dependency:_** _Webpack config builder for multiple ecosystems like standalone React frontends, Antd, Preact and WordPress._
+##### Code Refactoring
+
+* use lint-staged with correct monorepo support (CU-8699154vj)</details>
+
+
+
+
+
 ## 2.6.106 (2025-05-06)
 
 **Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
