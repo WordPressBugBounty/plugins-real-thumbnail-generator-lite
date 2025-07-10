@@ -128,6 +128,6 @@ class PackageLocalization
                 }
             }
         }
-        return \trailingslashit($result);
+        return $appendFile ? $result : \trailingslashit($result);
     }
 }
