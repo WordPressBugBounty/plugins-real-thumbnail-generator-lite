@@ -64,6 +64,20 @@ wp-content/uploads/2016/11/myimage-150×150.jpg
 ... and after you set a custom upload structure it can look like: 
 wp-content/uploads/2016/11/thumbnails/medium/myimage.jpg
 
+= Inspection of plugin source files =
+
+Most plugin files (PHP, templates, assets) are in the ZIP in human-friendly, unprocessed form (soure files).
+
+The plugin’s JavaScript/TypeScript is bundled (e.g. by Webpack) from plugin-specific packages and third-party open source to produce build files. Each build ends with `//# sourceMappingURL=…` to source maps with the original, human-readable code; these maps are public and the included source code can be inspected by anyone directly in your browser, if you have installed the plugin.
+
+To conveniently view the complete codebase of the consumed script in e.g. Chromium/Google Chrome, open *⋮ > More tools > Developer tools > ⋮ (in DevTools) > Settings > Preferences > Sources* and enable "JavaScript source maps", "CSS source maps", and "Allow DevTools to load resources, such as source maps, from remote file paths". Reload, then open *DevTools > Sources > "devowl-local-files"* to inspect all readable sources.
+
+Source maps are hosted outside the ZIP to keep size manageable; otherwise the plugin could exceed limits of web hosts and become non-installable.
+
+The repository with all source files can be do be inspected by anyone at [assets.devowl.io/wordpress-plugins-source-code.zip](https://assets.devowl.io/wordpress-plugins-source-code.zip). Please check out the `README.md` in the repository to learn how to get started!
+
+For details on the data procession of our servers, please read [devowl.io/privacy-policy](https://devowl.io/privacy-policy/).
+
 == Screenshots ==
 
 1. Regenerate single images
