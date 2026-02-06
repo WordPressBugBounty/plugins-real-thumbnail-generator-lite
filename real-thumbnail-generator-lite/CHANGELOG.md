@@ -3,6 +3,498 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.6.125 (2025-12-02)
+
+
+### Maintenance
+
+* compatibility with WordPress 6.9 (CU-869bakzm8)
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.4.2</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* implement missing file multipart upload in contracts (CU-869badh12)
+* implement missing file multipart upload in contracts fetch-client (CU-869badh12)</details>
+
+
+
+
+
+## 2.6.124 (2025-11-21) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.4.1</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* allow to set a x-tagGroups via route details (CU-8699tgz5g)
+* remove redundant delivery ack policy handling (CU-869am6b3b)
+
+
+##### Maintenance
+
+* upgrade zod to latest v4 and refactor to zod imports instead of zod/v4 (CU-8699tgz5g)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.7.12</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Maintenance
+
+* introduce secret-scanner with gitleaks (CU-869aw6tca)</details>
+
+<details><summary>Development dependency update @devowl-wp/eslint-config 0.2.20</summary>
+
+
+**_Purpose of dependency:_** _Provide eslint configuration for our complete monorepo._
+##### Maintenance
+
+* upgrade zod to latest v4 and refactor to zod imports instead of zod/v4 (CU-8699tgz5g)</details>
+
+
+
+
+
+## 2.6.123 (2025-10-15) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+
+### Continuous Integration
+
+* correctly type check with --project instead of cd into the TypeScript project folder (CU-8697h8axv)
+
+
+<details><summary>Dependency updates @devowl-wp/freemium 1.3.122</summary>
+
+
+**_Purpose of dependency:_** _Make your plugin to a freemium plugin with predefined Envato support_
+##### Continuous Integration
+
+* correctly type check with --project instead of cd into the TypeScript project folder (CU-8697h8axv)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-product-manager-wp-client 1.20.5</summary>
+
+
+**_Purpose of dependency:_** _A WordPress client for Real Product Manager_
+##### Continuous Integration
+
+* correctly type check with --project instead of cd into the TypeScript project folder (CU-8697h8axv)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-utils 1.14.5</summary>
+
+
+**_Purpose of dependency:_** _Create cross-selling ads, about page, rating and newsletter input for WP Real plugins._
+##### Continuous Integration
+
+* correctly type check with --project instead of cd into the TypeScript project folder (CU-8697h8axv)</details>
+
+<details><summary>Dependency updates @devowl-wp/utils 1.20.5</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Continuous Integration
+
+* correctly type check with --project instead of cd into the TypeScript project folder (CU-8697h8axv)</details>
+
+<details><summary>Development dependency update @devowl-wp/api 1.4.0</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* allow to create literal error code responses (CU-8699tgz5g)
+* allow to define routes to be a webhook (CU-8699tgz5g)
+* enhance vendor management contracts with new API endpoints and schema updates (CU-8699tgz5g)
+* make optional recursion schema properties work as expected (CU-8699tgz5g)
+
+
+##### Continuous Integration
+
+* correctly type check with --project instead of cd into the TypeScript project folder (CU-8697h8axv)
+
+
+##### Documentation
+
+* user session and magic link routes improved (CU-8699tgz5g)
+
+
+##### Features
+
+* enhance vendor and user management with new API endpoints and schema updates (CU-8699tgz5g)
+* introduce a contract-first design for message brokers with delivery-tuning (CU-869am6b3b)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-localization 0.8.28</summary>
+
+
+**_Purpose of dependency:_** _Provide a CLI to push and pull localization files from different translation management systems._
+##### Bug Fixes
+
+* compatibility with the new q parameter in autotranslate since Weblate 5.13 (CU-869ar5pcu)
+* update error handling for existing languages (CU-869ar5pcu)</details>
+
+<details><summary>Development dependency update @devowl-wp/regexp-translation-extractor 0.2.45</summary>
+
+
+**_Purpose of dependency:_** _Provide a performant translation extractor based on regular expression._
+##### Continuous Integration
+
+* correctly type check with --project instead of cd into the TypeScript project folder (CU-8697h8axv)</details>
+
+<details><summary>Development dependency update @devowl-wp/ts-config 0.1.18</summary>
+
+
+**_Purpose of dependency:_** _Predefined compiler options for our backends._
+##### Continuous Integration
+
+* correctly type check with --project instead of cd into the TypeScript project folder (CU-8697h8axv)</details>
+
+
+
+
+
+## 2.6.122 (2025-09-24) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+
+### Documentation
+
+* access to source files of plugin (CU-869ad3694)
+
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.7.10</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Continuous Integration
+
+* oss-extract only in master pipeline (CU-869ad3694)</details>
+
+<details><summary>Development dependency update @devowl-wp/eslint-config 0.2.19</summary>
+
+
+**_Purpose of dependency:_** _Provide eslint configuration for our complete monorepo._
+##### Build System
+
+* introduce .oss.ts and oss-extract CLI (CU-869ad3694)</details>
+
+<details><summary>Development dependency update @devowl-wp/monorepo-utils 0.2.19</summary>
+
+
+**_Purpose of dependency:_** _Predefined monorepo utilities and tasks._
+##### Build System
+
+* introduce .oss.ts and oss-extract CLI (CU-869ad3694)</details>
+
+<details><summary>Development dependency update @devowl-wp/webpack-config 0.2.49</summary>
+
+
+**_Purpose of dependency:_** _Webpack config builder for multiple ecosystems like standalone React frontends, Antd, Preact and WordPress._
+##### Build System
+
+* introduce .oss.ts and oss-extract CLI (CU-869ad3694)</details>
+
+
+
+
+
+## 2.6.121 (2025-09-12) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.3.2</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* allow v1, v2, ... versioning beside semantic versioning for contract (CU-8699tgz5g)
+* remove undefined values from URLSearchParams (CU-869ad2n4f)
+
+
+##### Documentation
+
+* add another example for multiple nested recursion objects (CU-8699tgz5g)
+* uncaught Error: Cannot find module 'node:async_hooks'</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-localization 0.8.26</summary>
+
+
+**_Purpose of dependency:_** _Provide a CLI to push and pull localization files from different translation management systems._
+##### Bug Fixes
+
+* correctly check when a missing language already existed before (CU-8699tdjp0)</details>
+
+
+
+
+
+## 2.6.120 (2025-09-04) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.3.1</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* content length is not always respond by server if using e.g. Cloudflare with Transfer-Encoding: chunked (CU-869ac6g7m)</details>
+
+
+
+
+
+## 2.6.119 (2025-09-04) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.3.0</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* a fetch client need to pass the API version (CU-869a8xjjf)
+* run guard schema validations isolated from complete contract schema validation (CU-8699z5dt7)
+
+
+##### Code Refactoring
+
+* migrate from @devowl-wp/api-request to new fetch client (CU-869a8xjjf)
+
+
+##### Documentation
+
+* add README for contract-first instroductions (CU-8699z5dt7)
+
+
+##### Features
+
+* introduce type-safe createFetchClient from all contracts (CU-869a8xjjf)
+
+
+##### Tests
+
+* add Vitest test runner for our contracts and introduce a first draft for a RPC client type generator (CU-869a8xjjf)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.7.9</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Build System
+
+* introduce Complyforce API backend (CU-8699tdjp0)
+
+
+##### Continuous Integration
+
+* pnpm-lock.yaml should be considered as common file change (CU-869a875re)</details>
+
+<details><summary>Development dependency update @devowl-wp/eslint-config 0.2.18</summary>
+
+
+**_Purpose of dependency:_** _Provide eslint configuration for our complete monorepo._
+##### Bug Fixes
+
+* switch from node fetch to undici request and make it work with streams and content encoding (CU-86997627z)</details>
+
+
+
+
+
+## 2.6.118 (2025-08-25) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Dependency updates @devowl-wp/real-product-manager-wp-client 1.20.0</summary>
+
+
+**_Purpose of dependency:_** _A WordPress client for Real Product Manager_
+##### Features
+
+* translate into Slovenian and Croatia (CU-8699ce5ba)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-utils 1.14.0</summary>
+
+
+**_Purpose of dependency:_** _Create cross-selling ads, about page, rating and newsletter input for WP Real plugins._
+##### Features
+
+* translate into Slovenian and Croatia (CU-8699ce5ba)</details>
+
+<details><summary>Dependency updates @devowl-wp/utils 1.20.0</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Features
+
+* translate into Slovenian and Croatia (CU-8699ce5ba)</details>
+
+<details><summary>Development dependency update @devowl-wp/api 1.2.1</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* make API contracts aware of recursion, parameters to object for refinable schema and switch language contexts correctly (CU-8699z5dt7)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-localization 0.8.24</summary>
+
+
+**_Purpose of dependency:_** _Provide a CLI to push and pull localization files from different translation management systems._
+##### Bug Fixes
+
+* after creating a language wait for component to be idle and no task is running (CU-8699ce5ba)
+
+
+##### Continuous Integration
+
+* handle 404 error correctly after tasks was in progress previously (CU-8699ce5ba)</details>
+
+<details><summary>Development dependency update @devowl-wp/webpack-config 0.2.47</summary>
+
+
+**_Purpose of dependency:_** _Webpack config builder for multiple ecosystems like standalone React frontends, Antd, Preact and WordPress._
+##### Build System
+
+* ignore async_hooks in webpack (CU-8699z5dt7)</details>
+
+
+
+
+
+## 2.6.117 (2025-08-08) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.2.0</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Features
+
+* make API contracts compatible with OpenAPI, move guards to API definition and automatically generate API UI (CU-8699z5dt7)</details>
+
+
+
+
+
+## 2.6.116 (2025-07-29) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.7.8</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Continuous Integration
+
+* resource group for Docker Review deployments to avoid race condition in Swarm subnet allocation (CU-8699xj5ue)
+
+
+##### Tests
+
+* introduce optional playwright coverage with c8 (CU-8699761na)</details>
+
+<details><summary>Development dependency update @devowl-wp/monorepo-utils 0.2.17</summary>
+
+
+**_Purpose of dependency:_** _Predefined monorepo utilities and tasks._
+##### Bug Fixes
+
+* compatibility with latest version of Taskfile (CU-8699761na)</details>
+
+
+
+
+
+## 2.6.115 (2025-07-27) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Dependency updates @devowl-wp/utils 1.19.35</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Bug Fixes
+
+* uncaught InvalidArgument IdnaEncoder::encode() Argument [#1](https://git.owlinfra.de/devowlio/devowl-wp/issues/1) () must be of type string|Stringable, NULL given</details>
+
+
+
+
+
+## 2.6.114 (2025-07-23) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Dependency updates @devowl-wp/utils 1.19.34</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Bug Fixes
+
+* better anti ad-block system against Ghostery (CU-8697fw0r4)</details>
+
+
+
+
+
+## 2.6.113 (2025-07-16) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.1.8</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* introduce translation options for fields and enhance translation handling in forms (CU-8699f32x9)</details>
+
+
+
+
+
 ## 2.6.112 (2025-07-10)
 
 **Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
