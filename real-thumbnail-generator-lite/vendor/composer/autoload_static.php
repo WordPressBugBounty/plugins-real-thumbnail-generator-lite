@@ -13,7 +13,7 @@ class ComposerStaticInit86605978a0ea4fbdfd0a8fe1c6da3105
     );
 
     public static $prefixLengthsPsr4 = array (
-        'D' => 
+        'D' =>
         array (
             'DevOwl\\RealThumbnailGenerator\\Vendor\\MatthiasWeb\\Utils\\' => 55,
             'DevOwl\\RealThumbnailGenerator\\Vendor\\DevOwl\\RealUtils\\' => 54,
@@ -25,27 +25,27 @@ class ComposerStaticInit86605978a0ea4fbdfd0a8fe1c6da3105
     );
 
     public static $prefixDirsPsr4 = array (
-        'DevOwl\\RealThumbnailGenerator\\Vendor\\MatthiasWeb\\Utils\\' => 
+        'DevOwl\\RealThumbnailGenerator\\Vendor\\MatthiasWeb\\Utils\\' =>
         array (
             0 => __DIR__ . '/..' . '/devowl-wp/utils/src',
         ),
-        'DevOwl\\RealThumbnailGenerator\\Vendor\\DevOwl\\RealUtils\\' => 
+        'DevOwl\\RealThumbnailGenerator\\Vendor\\DevOwl\\RealUtils\\' =>
         array (
             0 => __DIR__ . '/..' . '/devowl-wp/real-utils/src',
         ),
-        'DevOwl\\RealThumbnailGenerator\\Vendor\\DevOwl\\RealProductManagerWpClient\\' => 
+        'DevOwl\\RealThumbnailGenerator\\Vendor\\DevOwl\\RealProductManagerWpClient\\' =>
         array (
             0 => __DIR__ . '/..' . '/devowl-wp/real-product-manager-wp-client/src',
         ),
-        'DevOwl\\RealThumbnailGenerator\\Vendor\\DevOwl\\Freemium\\' => 
+        'DevOwl\\RealThumbnailGenerator\\Vendor\\DevOwl\\Freemium\\' =>
         array (
             0 => __DIR__ . '/..' . '/devowl-wp/freemium/src',
         ),
-        'DevOwl\\RealThumbnailGenerator\\Vendor\\ColinODell\\Json5\\' => 
+        'DevOwl\\RealThumbnailGenerator\\Vendor\\ColinODell\\Json5\\' =>
         array (
             0 => __DIR__ . '/..' . '/colinodell/json5/src',
         ),
-        'DevOwl\\RealThumbnailGenerator\\' => 
+        'DevOwl\\RealThumbnailGenerator\\' =>
         array (
             0 => __DIR__ . '/../..' . '/inc',
             1 => __DIR__ . '/../..' . '/src/inc',

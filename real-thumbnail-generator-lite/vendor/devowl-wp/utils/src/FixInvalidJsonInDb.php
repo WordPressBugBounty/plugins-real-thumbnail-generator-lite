@@ -113,7 +113,7 @@ class FixInvalidJsonInDb
                 }
             }
             if ($changed) {
-                return $check;
+                return $single ? [$check] : $check;
             }
         }
         return $value;

@@ -15,6 +15,12 @@ use WpOrg\Requests\IdnaEncoder;
 trait Assets
 {
     /**
+     * A map of handles to their advanced enqueue features.
+     *
+     * @var array<string, string[]>
+     */
+    private $handleToFeatures = [];
+    /**
      * For future implementations and updates of this class you can differ from BUMP version.
      * Increment, if needed.
      */
@@ -91,8 +97,9 @@ trait Assets
      * @param string|string[] $handles
      * @param string[] $features See $ADVANCED_ENQUEUE_FEATURE_* constants or `null` for all features
      * @param string $type Can be `script` or `style`
+     * @param string[] $preloadChunks Chunks to preload by name
      */
-    public function enableAdvancedEnqueue($handles, $features = null, $type = 'script')
+    public function enableAdvancedEnqueue($handles, $features = null, $type = 'script', $preloadChunks = [])
     {
         $handles = \is_array($handles) ? $handles : [$handles];
         // Add `vendor-` also to the handles for `probablyEnqueueChunk` compatibility
@@ -107,11 +114,22 @@ trait Assets
             $this->enableAsyncEnqueue($handles);
         }
         if ($features === null || \in_array(Constants::ASSETS_ADVANCED_ENQUEUE_FEATURE_PRELOADING, $features, \true)) {
-            $this->enablePreloadEnqueue($handles, $type);
+            $this->enablePreloadEnqueue($handles, $type, $preloadChunks);
         }
         if ($features === null || \in_array(Constants::ASSETS_ADVANCED_ENQUEUE_FEATURE_PRIORITY_QUEUE, $features, \true)) {
             $this->enablePriorityQueue($handles, $type);
         }
+    }
+    /**
+     * Checks if a given feature is enabled for a given handle.
+     *
+     * @param string $handle
+     * @param string $feature
+     * @return boolean
+     */
+    public function isAdvancedEnqueueEnabled($handle, $feature)
+    {
+        return isset($this->handleToFeatures[$handle]) && \in_array($feature, $this->handleToFeatures[$handle], \true);
     }
     /**
      * Enable `defer` attribute for given handle(s) (only scripts are supported, see https://stackoverflow.com/a/25890780).
@@ -122,6 +140,9 @@ trait Assets
     public function enableDeferredEnqueue($handles)
     {
         $handles = \is_array($handles) ? $handles : [$handles];
+        foreach ($handles as $handle) {
+            $this->handleToFeatures[$handle] = \array_merge($this->handleToFeatures[$handle] ?? [], [Constants::ASSETS_ADVANCED_ENQUEUE_FEATURE_DEFER]);
+        }
         \add_filter('script_loader_tag', function ($tag, $handle) use($handles) {
             if (\in_array($handle, $handles, \true) && \stripos($tag, 'defer') === \false) {
                 // see https://regex101.com/r/0whi5s/1
@@ -140,6 +161,9 @@ trait Assets
     public function enableAsyncEnqueue($handles)
     {
         $handles = \is_array($handles) ? $handles : [$handles];
+        foreach ($handles as $handle) {
+            $this->handleToFeatures[$handle] = \array_merge($this->handleToFeatures[$handle] ?? [], [Constants::ASSETS_ADVANCED_ENQUEUE_FEATURE_ASYNC]);
+        }
         \add_filter('script_loader_tag', function ($tag, $handle) use($handles) {
             if (\in_array($handle, $handles, \true) && \stripos($tag, 'async') === \false) {
                 // see https://regex101.com/r/0whi5s/1
@@ -155,13 +179,18 @@ trait Assets
      *
      * @param string|string[] $handles
      * @param string $type Can be `script` or `style`
+     * @param string[] $preloadChunks Chunks to preload by name
      * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Preloading_content
      */
-    public function enablePreloadEnqueue($handles, $type = 'script')
+    public function enablePreloadEnqueue($handles, $type = 'script', $preloadChunks = [])
     {
+        static $preloadedChunks = [];
         $handles = \is_array($handles) ? $handles : [$handles];
         $wp_dependencies = $type === 'script' ? \wp_scripts() : \wp_styles();
-        \add_action('wp_head', function () use($handles, $type, $wp_dependencies) {
+        foreach ($handles as $handle) {
+            $this->handleToFeatures[$handle] = \array_merge($this->handleToFeatures[$handle] ?? [], [Constants::ASSETS_ADVANCED_ENQUEUE_FEATURE_PRELOADING]);
+        }
+        \add_action('wp_head', function () use($handles, $type, $wp_dependencies, $preloadChunks, &$preloadedChunks) {
             foreach ($handles as $handle) {
                 $script = $wp_dependencies->query($handle);
                 if ($script !== \false) {
@@ -176,6 +205,19 @@ trait Assets
                     $src = \apply_filters('script_loader_src', $src, $handle);
                     \printf('<link rel="preload" href="%s" as="%s" />
 ', \esc_url($src), $type);
+                    // Add chunk preloads if desired
+                    $chunks = $wp_dependencies->get_data($handle, 'chunks');
+                    if ($chunks) {
+                        foreach ($chunks as $chunkName => $chunkUrl) {
+                            if (!\in_array($chunkName, $preloadChunks, \true) || \in_array($chunkUrl, $preloadedChunks, \true)) {
+                                continue;
+                            }
+                            $chunkUrl = \apply_filters('script_loader_src', $chunkUrl, $handle);
+                            $preloadedChunks[] = $chunkUrl;
+                            \printf('<link rel="preload" href="%s" as="%s" />
+', \esc_url($chunkUrl), 'script');
+                        }
+                    }
                 }
             }
         }, 2);
@@ -233,6 +275,27 @@ trait Assets
         return (object) $result;
     }
     /**
+     * Get a map of all entry chunks manifests for all entry points.
+     */
+    public function getChunkEntryChunksManifest()
+    {
+        $path = \trailingslashit($this->getPluginConstant(Constants::PLUGIN_CONST_PATH));
+        static $chunkEntryChunksManifest = null;
+        if ($chunkEntryChunksManifest === null) {
+            $chunkEntryChunksManifest = [];
+            $chunkEntryChunksManifestFiles = \glob($path . $this->getPublicFolder() . '*-entry-chunks-manifest.json');
+            if ($chunkEntryChunksManifestFiles !== \false) {
+                foreach ($chunkEntryChunksManifestFiles as $chunkEntryChunksManifestFile) {
+                    $decoded = \json_decode(\file_get_contents($chunkEntryChunksManifestFile), ARRAY_A);
+                    if (\is_array($decoded)) {
+                        $chunkEntryChunksManifest = \array_merge($chunkEntryChunksManifest, $decoded);
+                    }
+                }
+            }
+        }
+        return $chunkEntryChunksManifest ?? [];
+    }
+    /**
      * Get the suffix for `chunks` localized variable including dependencies.
      *
      * @param string $basename
@@ -269,6 +332,23 @@ trait Assets
             }
         }
         return $result;
+    }
+    /**
+     * Enables a dummy handle which is enqueued in the footer. In general, this script is never loaded on the frontend
+     * but it allows you to use the `$handle` for e.g. `wp_localize_script()`. It allows the following scenario:
+     *
+     * 1. Enqueue a `<script defer` script in the header
+     * 2. Instead of localizing a big JSON object in the header, use the dummy handle to wp_localize_script() in the footer
+     *
+     * @return string The handle of the dummy script
+     */
+    public function enqueueFooterDummyHandle()
+    {
+        $handle = $this->enqueueComposerScript('utils', [], 'noop.js', \true);
+        \add_filter('script_loader_tag', function ($tag, $scriptLoaderHandle) use($handle) {
+            return $scriptLoaderHandle === $handle ? '' : $tag;
+        }, 10, 2);
+        return $handle;
     }
     /**
      * When using WordPress < 6.6 we need to enqueue the react/jsx-runtime UMD bundle to make the
@@ -374,6 +454,22 @@ trait Assets
                     // Only set translations for our own entry points, libraries handle localization usually in another way
                     if (!$isLib) {
                         $this->setLazyScriptTranslations($useHandle, $this->getPluginConstant(Constants::PLUGIN_CONST_TEXT_DOMAIN), \trailingslashit($this->getPluginConstant(Constants::PLUGIN_CONST_PATH)) . Constants::LOCALIZATION_PUBLIC_JSON_I18N);
+                        // Add data about the available chunks for this entry point
+                        $chunkEntryChunksManifest = $this->getChunkEntryChunksManifest()[\basename($useSrc)] ?? [];
+                        if (\count($chunkEntryChunksManifest) > 0) {
+                            $resolvedUrls = [];
+                            foreach ($chunkEntryChunksManifest as $chunkName => $chunks) {
+                                foreach ($chunks as $chunk) {
+                                    // Can be e. g. `banner_tcf-pro-banner-lazy.pro.js?ver=cc803dc7507dbd12` or a `.css` file
+                                    if (\strpos($chunk, '.js') !== \false) {
+                                        $resolvedUrls[$chunkName] = \plugins_url($publicFolder . $chunk, $this->getPluginConstant(Constants::PLUGIN_CONST_FILE));
+                                        break;
+                                        // Only keep the first .js file per chunk name
+                                    }
+                                }
+                            }
+                            \wp_script_add_data($useHandle, 'chunks', $resolvedUrls);
+                        }
                     }
                 } else {
                     \wp_enqueue_style($useHandle, $url, $deps, $cachebuster, $media);
@@ -691,7 +787,15 @@ JS;
      * string[]     makeBase64Encoded       List of keys of the array object which should be converted to base64 at output time (e.g. to avoid ModSecurity issues)
      * boolean      useCore                 Use `wp_localize_script` internally instead of custom localize script
      * string[]     lazyParse               A list of pathes of the array which should be lazy parsed. This could be useful to improve performance and parse as needed (e.g. huge arrays).
+     * boolean      bypassJsonParse         Bypass the JSON.parse call and just expose the raw JSON string in the inline script. In your frontend you need to use the
+     *                                       `getAnonymousLocalizedScript` function to parse the JSON string.
      * ```
+     *
+     * **Performance tip:** If you have a huge JSON object, you can move it to the bottom of the page and offload JSON parsing outside of the HTML parsing process.
+     * For this, you can set the `bypassJsonParse` setting to `true` and use the `getAnonymousLocalizedScript` function in your frontend to parse the JSON string.
+     * If you want to make sure that your enqueued script is still part of the `<head` section (and you do not want to use `$in_footer = true`) to keep script execution
+     * order intact, you can use `enqueueFooterDummyHandle` as `$handle` parameter. But keep attention: You need to make sure that your enqueued script
+     * (which uses `getAnonymousLocalizedScript`) is enqueued with `<script defer` as otherwise the JSON in the footer is not yet available.
      *
      * @param string $handle Name of the script to attach data to.
      * @param string $object_name Name of the variable that will contain the data.
@@ -702,12 +806,13 @@ JS;
      */
     public function anonymous_localize_script($handle, $object_name, $l10n, $settings = [])
     {
-        $settings = \wp_parse_args($settings, ['makeBase64Encoded' => [], 'useCore' => \false, 'lazyParse' => []]);
+        $settings = \wp_parse_args($settings, ['makeBase64Encoded' => [], 'useCore' => \false, 'lazyParse' => [], 'bypassJsonParse' => \false]);
         if ($settings['useCore']) {
             return \wp_localize_script($handle, $object_name, $l10n);
         }
         $makeBase64Encoded = $settings['makeBase64Encoded'];
         $lazyParse = $settings['lazyParse'];
+        $bypassJsonParse = $settings['bypassJsonParse'];
         // Mark the script tag with some identifier, so our helper script (added below) can read
         // the JSON content. See also about: https://stackoverflow.com/q/12090883/5506547
         // Do not use a randomized string as it can lead to issues with cached web pages when the
@@ -715,7 +820,7 @@ JS;
         $uuid = \wp_generate_uuid4();
         $uuid = \md5(\sprintf('%s:%s:%s', $handle, $object_name, $this->getPluginConstant(Constants::PLUGIN_CONST_VERSION)));
         $base64Marker = 'base64-encoded:';
-        \add_filter('script_loader_tag', function ($tag, $scriptHandle) use($handle, $uuid, $l10n, $object_name, $makeBase64Encoded, $base64Marker, $lazyParse) {
+        \add_filter('script_loader_tag', function ($tag, $scriptHandle) use($handle, $uuid, $l10n, $object_name, $makeBase64Encoded, $base64Marker, $lazyParse, $bypassJsonParse) {
             if ($scriptHandle === $handle) {
                 if (\count($makeBase64Encoded) > 0) {
                     \array_walk_recursive($l10n, function (&$val, $key) use($makeBase64Encoded, $base64Marker) {
@@ -752,11 +857,10 @@ JS;
                    window[randomId] = n;
                                     })();
                 */
-                $tag = \sprintf('<script type="application/json" %4$s id="a%1$s1-js-extra">%2$s</script>
-<script %4$s id="a%1$s2-js-extra">
+                $tag = \sprintf('<script type="application/json" %4$s id="a%1$s1-js-extra">%2$s</script>' . ($bypassJsonParse ? '' : '<script %4$s id="a%1$s2-js-extra">
 (()=>{var x=%5$s,t=(e,t)=>new Proxy(e,{get:(e,n)=>{let r=Reflect.get(e,n);return n===t&&"string"==typeof r&&(r=JSON.parse(r,x),Reflect.set(e,n,r)),r}}),n=JSON.parse(document.getElementById("a%1$s1-js-extra").innerHTML,x);%6$s;window.%3$s=n;window[Math.random().toString(36)]=n;
 })();
-</script>', $uuid, \wp_json_encode($l10n), $object_name, \join(' ', [
+</script>'), $uuid, \wp_json_encode($l10n), $object_name, \join(' ', [
                     // TODO: shouldn't this be part of @devowl-wp/cache-invalidate?
                     // Compatibility with most caching plugins which lazy load JavaScript
                     'data-skip-lazy-load="js-extra"',

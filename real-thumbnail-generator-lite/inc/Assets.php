@@ -39,8 +39,6 @@ class Assets
         }
         $realUtils = RTG_ROOT_SLUG . '-real-utils-helper';
         // Your assets implementation here... See utils Assets for enqueue* methods
-        $useNonMinifiedSources = $this->useNonMinifiedSources();
-        // Use this variable if you need to differ between minified or non minified sources
         // Our utils package relies on jQuery, but this shouldn't be a problem as the most themes still use jQuery (might be replaced with https://github.com/github/fetch)
         // Enqueue external utils package
         $scriptDeps = $this->enqueueUtils();
@@ -48,8 +46,6 @@ class Assets
         // real-product-manager-wp-client (for licensing purposes)
         \array_unshift($scriptDeps, RpmWpClientCore::getInstance()->getAssets()->enqueue($this));
         // Enqueue plugin entry points
-        // react-window
-        \array_unshift($scriptDeps, $this->enqueueLibraryScript('react-window', [[$useNonMinifiedSources, 'react-window/dist/index-dev.umd.js'], 'react-window/dist/index-prod.umd.js'], ['react', 'react-dom']));
         $handle = $this->enqueueScript('admin', [[$this->isPro(), 'admin.pro.js'], 'admin.lite.js'], $scriptDeps);
         $this->enqueueStyle('admin', 'admin.css', [$realUtils]);
         // Localize script with server-side variables

@@ -114,10 +114,10 @@ class Utils
      */
     public static function getCurrentHostname()
     {
-        // Multisite subdomain installations are forced to use the `home_url` option
-        // See also https://github.com/WordPress/WordPress/blob/4e4016f61fa40abda4c0a0711496f2ba50a10563/wp-includes/ms-blogs.php#L249
-        $isMultisiteSubdomainInstallation = \is_multisite() && \defined('SUBDOMAIN_INSTALL') && \constant('SUBDOMAIN_INSTALL');
-        if (!$isMultisiteSubdomainInstallation && \defined('WP_SITEURL')) {
+        // In multisite, `switch_to_blog()` must resolve the hostname from the current blog's
+        // persisted options. A global `WP_SITEURL` constant can be request-dependent and would
+        // otherwise make every subsite look like the same host.
+        if (!\is_multisite() && \defined('WP_SITEURL')) {
             // Constant is defined (https://wordpress.org/support/article/changing-the-site-url/#edit-wp-config-php)
             $site_url = \constant('WP_SITEURL');
         } else {

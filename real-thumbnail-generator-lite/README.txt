@@ -1,10 +1,10 @@
 === Real Thumbnail Generator: Efficient regeneration of thumbnails in all sizes ===
 Contributors: devowl, mguenter, jankarres
 Tags: regenerate thumbnails, thumbnail, thumbnails, regenerate, force regenerate, post thumbnail, post thumbnails, image regenerate, regenerate images
-Stable tag: 2.6.125
+Stable tag: 2.6.136
 Requires at least: 5.9
 Requires PHP: 7.4.0
-Tested up to: 6.9
+Tested up to: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.en.html
 
