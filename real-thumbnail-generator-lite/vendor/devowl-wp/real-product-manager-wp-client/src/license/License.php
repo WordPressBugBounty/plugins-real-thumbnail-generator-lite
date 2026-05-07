@@ -173,9 +173,9 @@ class License
         if ($oldValue !== null) {
             $activation->deactivate(\false, 'warning', \sprintf(
                 // translators:
-                \__('The plugin has a new update server. Therefore, you need to reactivate your license (%s) to continue receiving updates.', RPM_WP_CLIENT_TD),
+                \__('The plugin has a new update server. Therefore, you need to reactivate your license (%s) to continue receiving updates.', 'devowl-wp-real-product-manager-wp-client'),
                 $oldValue
-            ) . (\is_multisite() ? ' ' . \__('You are using a WordPress multisite. According to the plugin\'s licence agreement, you need one license per website. If you have only used one licence for all websites in your WordPress multisite, this was only possible because it was not technically prevented. We ask for your understanding if this causes you any inconvenience!', RPM_WP_CLIENT_TD) : ''));
+            ) . (\is_multisite() ? ' ' . \__('You are using a WordPress multisite. According to the plugin\'s licence agreement, you need one license per website. If you have only used one licence for all websites in your WordPress multisite, this was only possible because it was not technically prevented. We ask for your understanding if this causes you any inconvenience!', 'devowl-wp-real-product-manager-wp-client') : ''));
         }
     }
     /**
@@ -186,7 +186,7 @@ class License
         $activation = $this->getActivation();
         $code = $activation->getCode();
         if (empty($code)) {
-            return new WP_Error(License::ERROR_CODE_NOT_ACTIVATED, \__('You have not yet activated a license for this plugin on your website.', RPM_WP_CLIENT_TD), ['blog' => $this->getBlogId(), 'slug' => $this->getSlug()]);
+            return new WP_Error(License::ERROR_CODE_NOT_ACTIVATED, \__('You have not yet activated a license for this plugin on your website.', 'devowl-wp-real-product-manager-wp-client'), ['blog' => $this->getBlogId(), 'slug' => $this->getSlug()]);
         }
         $this->switch();
         $response = $this->getClient()->patch($code, $this->getUuid(), $activation->isTelemetryDataSharingOptIn());
@@ -212,7 +212,7 @@ class License
         // Not yet activated, it's an error when asking for remote result
         $code = $this->getActivation()->getCode();
         if (empty($code)) {
-            return new WP_Error(self::ERROR_CODE_NOT_ACTIVATED, \__('You have not yet activated a license for this plugin on your website.', RPM_WP_CLIENT_TD), ['blog' => $this->getBlogId(), 'slug' => $this->getSlug()]);
+            return new WP_Error(self::ERROR_CODE_NOT_ACTIVATED, \__('You have not yet activated a license for this plugin on your website.', 'devowl-wp-real-product-manager-wp-client'), ['blog' => $this->getBlogId(), 'slug' => $this->getSlug()]);
         }
         if ($this->remoteStatus === null || $force) {
             $this->remoteStatus = $this->getClient()->get($code, $this->getUuid());
@@ -250,7 +250,7 @@ class License
             }
             // Automatically deactivate
             if ($currentHostname !== $persistedHostname) {
-                $this->getActivation()->deactivate(\false, 'warning', \__('The license has been automatically deactivated because your website is running on a new domain. Please activate the license again!', RPM_WP_CLIENT_TD) . \sprintf(' "%s" -> "%s"', $persistedHostname, $currentHostname) . ($this->getInitiator()->isExternalUpdateEnabled() ? \sprintf(' %s: %s', \__('License key', RPM_WP_CLIENT_TD), $code) : ''));
+                $this->getActivation()->deactivate(\false, 'warning', \__('The license has been automatically deactivated because your website is running on a new domain. Please activate the license again!', 'devowl-wp-real-product-manager-wp-client') . \sprintf(' "%s" -> "%s"', $persistedHostname, $currentHostname) . ($this->getInitiator()->isExternalUpdateEnabled() ? \sprintf(' %s: %s', \__('License key', 'devowl-wp-real-product-manager-wp-client'), $code) : ''));
                 // It might be a clone of the website, let's delete also the UUID
                 \update_option(License::OPTION_NAME_UUID_PREFIX . $this->getSlug(), '');
                 // Is there a chance the new host is configured programmatically?
@@ -301,7 +301,7 @@ class License
         $prog = $this->getProgrammaticActivation();
         $activation = $this->getActivation();
         if ($prog === \false) {
-            return new WP_Error('rpm_wpc_programmatic_activation_not_found', \__('No programmatic activation found for this plugin.'));
+            return new WP_Error('rpm_wpc_programmatic_activation_not_found', \__('No programmatic activation found for this plugin.', 'devowl-wp-real-product-manager-wp-client'));
         }
         // If already activated, check if something changed in our filter and reforce
         $code = $activation->getCode();

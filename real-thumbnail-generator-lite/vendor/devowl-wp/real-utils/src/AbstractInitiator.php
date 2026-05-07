@@ -97,7 +97,8 @@ abstract class AbstractInitiator
      */
     public function getAssetsUrl($path = '')
     {
-        return Core::getInstance()->getBaseAssetsUrl(\sprintf('wp-%s/%s', $this->getPluginBase()->getPluginConstant('TD'), $path));
+        $assetsSlug = \preg_replace('/-lite$/', '', $this->getPluginSlug());
+        return Core::getInstance()->getBaseAssetsUrl(\sprintf('wp-%s/%s', $assetsSlug, $path));
     }
     /**
      * Initialize all available things depending on the configuration.

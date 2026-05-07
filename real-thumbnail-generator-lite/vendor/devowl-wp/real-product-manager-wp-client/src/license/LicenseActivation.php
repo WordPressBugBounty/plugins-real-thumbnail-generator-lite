@@ -77,7 +77,7 @@ class LicenseActivation
         $license->switch();
         $slug = $license->getSlug();
         if (!empty($this->getCode())) {
-            $result = new WP_Error(self::ERROR_CODE_ALREADY_ACTIVATED, \__('You have already activated a license for this plugin. Please deactivate it first!', RPM_WP_CLIENT_TD), ['blog' => $license->getBlogId(), 'slug' => $slug]);
+            $result = new WP_Error(self::ERROR_CODE_ALREADY_ACTIVATED, \__('You have already activated a license for this plugin. Please deactivate it first!', 'devowl-wp-real-product-manager-wp-client'), ['blog' => $license->getBlogId(), 'slug' => $slug]);
         } else {
             $uuid = $license->getUuid();
             $result = $license->getClient()->post($code, $uuid, $installationType, $telemetry, $newsletterOptIn, $firstName, $email);

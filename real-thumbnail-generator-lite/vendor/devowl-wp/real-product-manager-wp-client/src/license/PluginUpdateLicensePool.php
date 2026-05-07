@@ -57,7 +57,7 @@ trait PluginUpdateLicensePool
         // Validate free products
         if ($licenses === null) {
             if ($this->getInitiator()->isExternalUpdateEnabled()) {
-                return new WP_Error(PluginUpdate::ERROR_CODE_INVALID_LICENSES, \__('You need to provide at least one license!', RPM_WP_CLIENT_TD), ['status' => 400]);
+                return new WP_Error(PluginUpdate::ERROR_CODE_INVALID_LICENSES, \__('You need to provide at least one license!', 'devowl-wp-real-product-manager-wp-client'), ['status' => 400]);
             }
             // Fallback to use free licenses
             $licenses = [];
@@ -69,7 +69,7 @@ trait PluginUpdateLicensePool
         }
         // Validate newsletter input
         if ($newsletterOptIn && (empty($firstName) || empty($email))) {
-            return new WP_Error(PluginUpdate::ERROR_CODE_INVALID_NEWSLETTER, \__('You must provide an email address and a name if you want to subscribe to the newsletter!', RPM_WP_CLIENT_TD), ['status' => 400]);
+            return new WP_Error(PluginUpdate::ERROR_CODE_INVALID_NEWSLETTER, \__('You must provide an email address and a name if you want to subscribe to the newsletter!', 'devowl-wp-real-product-manager-wp-client'), ['status' => 400]);
         }
         $validateKeys = $this->validateLicenseCodes($licenses, $telemetry, $newsletterOptIn, $firstName, $email);
         if (\is_wp_error($validateKeys)) {
@@ -99,7 +99,7 @@ trait PluginUpdateLicensePool
                 return $noUsageLicense['noUsage'];
             });
             if (\count($noUsageLicenses) === \count($licenses)) {
-                return new WP_Error(PluginUpdate::ERROR_CODE_NONE_IN_USAGE, \__('You must have at least one license of a site in use within your multisite.', RPM_WP_CLIENT_TD));
+                return new WP_Error(PluginUpdate::ERROR_CODE_NONE_IN_USAGE, \__('You must have at least one license of a site in use within your multisite.', 'devowl-wp-real-product-manager-wp-client'));
             }
         }
         // Validate license keys
@@ -121,7 +121,7 @@ trait PluginUpdateLicensePool
                             case 'http_request_failed':
                                 $errorText = \sprintf(
                                     // translators:
-                                    \__('The license server for checking the license cannot be reached. Please check if you are blocking access to %s e.g. by a firewall.', RPM_WP_CLIENT_TD),
+                                    \__('The license server for checking the license cannot be reached. Please check if you are blocking access to %s e.g. by a firewall.', 'devowl-wp-real-product-manager-wp-client'),
                                     $provider
                                 );
                                 break;

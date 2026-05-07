@@ -25,7 +25,7 @@ class View
      */
     public function plugin_action_links($actions)
     {
-        $actions[] = \sprintf('<a href="%s">%s</a>', $this->getThumbnailsPageUrl(), \__('Regenerate Thumbnails', RTG_TD));
+        $actions[] = \sprintf('<a href="%s">%s</a>', $this->getThumbnailsPageUrl(), \__('Regenerate Thumbnails', 'real-thumbnail-generator-lite'));
         return $actions;
     }
     /**
@@ -41,15 +41,15 @@ class View
         }
         $check = Thumbnail::getInstance()->check($post->ID, \false);
         // Create form field
-        $form_fields['rtg'] = ['label' => \__('Thumbnails', RTG_TD), 'input' => 'html', 'html' => '<div class="rtg-attachment-compat">
+        $form_fields['rtg'] = ['label' => \__('Thumbnails', 'real-thumbnail-generator-lite'), 'input' => 'html', 'html' => '<div class="rtg-attachment-compat">
             <div class="alignleft">' . \sprintf(
             // translators:
-            \__('%1$d of %2$s registered', RTG_TD),
+            \__('%1$d of %2$s registered', 'real-thumbnail-generator-lite'),
             \is_wp_error($check) ? -1 : $check['cntGenerated'],
             \is_wp_error($check) ? -1 : $check['cntRegistered']
         ) . '</div>
-    <button class="button alignright" data-rtg="' . $post->ID . '" data-action="info" style="margin-left:5px">' . \__('More', RTG_TD) . '</button>
-    <button class="button alignright" data-rtg="' . $post->ID . '" data-action="regenerate">' . \__('Regenerate', RTG_TD) . '</button>
+    <button class="button alignright" data-rtg="' . $post->ID . '" data-action="info" style="margin-left:5px">' . \__('More', 'real-thumbnail-generator-lite') . '</button>
+    <button class="button alignright" data-rtg="' . $post->ID . '" data-action="regenerate">' . \__('Regenerate', 'real-thumbnail-generator-lite') . '</button>
 </div>'];
         return $form_fields;
     }
@@ -62,7 +62,7 @@ class View
     public function media_row_actions($actions, $post)
     {
         if (('image/' === \substr($post->post_mime_type, 0, 6) || Thumbnail::getInstance()->isPdf($post)) && \current_user_can('upload_files')) {
-            $actions['rtg_regenerate'] = '<a href="javascript:undefined" data-rtg="' . $post->ID . '" data-action="regenerate">' . \__('Regenerate', RTG_TD) . '</a>';
+            $actions['rtg_regenerate'] = '<a href="javascript:undefined" data-rtg="' . $post->ID . '" data-action="regenerate">' . \__('Regenerate', 'real-thumbnail-generator-lite') . '</a>';
         }
         return $actions;
     }
@@ -81,7 +81,7 @@ class View
         ($subMenus =& $submenu['upload.php']) ?? [];
         foreach ($subMenus as &$val) {
             if ($val[2] === $slugMarker) {
-                $val = [\__('Regenerate Thumbnails', RTG_TD), 'upload_files', $this->getThumbnailsPageUrl()];
+                $val = [\__('Regenerate Thumbnails', 'real-thumbnail-generator-lite'), 'upload_files', $this->getThumbnailsPageUrl()];
             }
         }
     }

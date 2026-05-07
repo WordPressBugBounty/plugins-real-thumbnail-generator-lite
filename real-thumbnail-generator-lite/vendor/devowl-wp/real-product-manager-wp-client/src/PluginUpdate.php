@@ -3,7 +3,6 @@
 namespace DevOwl\RealThumbnailGenerator\Vendor\DevOwl\RealProductManagerWpClient;
 
 use DevOwl\RealThumbnailGenerator\Vendor\DevOwl\RealProductManagerWpClient\announcement\AnnouncementPool;
-use DevOwl\RealThumbnailGenerator\Vendor\DevOwl\RealProductManagerWpClient\license\PluginUpdateChecker;
 use DevOwl\RealThumbnailGenerator\Vendor\DevOwl\RealProductManagerWpClient\license\PluginUpdateLicensePool;
 use DevOwl\RealThumbnailGenerator\Vendor\DevOwl\RealProductManagerWpClient\view\PluginUpdateView;
 // @codeCoverageIgnoreStart
@@ -45,12 +44,6 @@ class PluginUpdate
      */
     private $announcementPool;
     /**
-     * Plugin Update Checker instance.
-     *
-     * @var PluginUpdateChecker
-     */
-    private $pluginUpdateChecker;
-    /**
      * C'tor.
      *
      * @param AbstractInitiator $initiator
@@ -61,7 +54,6 @@ class PluginUpdate
         $this->initiator = $initiator;
         $this->view = PluginUpdateView::instance($this);
         $this->announcementPool = AnnouncementPool::instance($this);
-        $this->pluginUpdateChecker = PluginUpdateChecker::instance($this);
         $this->constructPluginUpdateLicensePool();
     }
     /**
@@ -92,7 +84,6 @@ class PluginUpdate
             \add_action('admin_notices', [$this->getView(), 'admin_notices_not_licensed']);
         }
         \add_action('admin_notices', [$this->getView(), 'admin_notices_license_hint']);
-        $this->getPluginUpdateChecker()->probablyEnableExternalUpdates();
         // We do not handle the response as the activation automatically creates a warning for our user
         $this->getCurrentBlogLicense()->activateProgrammatically();
     }
@@ -229,13 +220,15 @@ class PluginUpdate
         return $this->announcementPool;
     }
     /**
-     * Get Plugin Update Checker.
+     * Get check update link. Returns false in the free version, updates are handled by wordpress.org!
      *
+     * @return string|false
      * @codeCoverageIgnore
      */
-    public function getPluginUpdateChecker()
+    public function getCheckUpdateLink()
     {
-        return $this->pluginUpdateChecker;
+        // This is a noop in the free version, updates are handled by wordpress.org!
+        return \false;
     }
     /**
      * New instance.

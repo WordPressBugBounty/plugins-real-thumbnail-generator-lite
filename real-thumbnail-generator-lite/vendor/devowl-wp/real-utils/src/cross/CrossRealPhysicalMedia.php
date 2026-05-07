@@ -43,8 +43,8 @@ class CrossRealPhysicalMedia extends AbstractCrossSelling
     {
         return [
             // Upload in "Add new" and Grid mode
-            'upload' => ['title' => \__('Did you know that?', REAL_UTILS_TD), 'image' => $this->getAssetsUrl('feature-manual.jpg'), 'description' => \__('Your uploads can say more than a thousand words. Unfortunately, search engines do not understand the content of images, for example. Organize your uploads directly in meaningful folder names and achieve a better ranking in search engines!', REAL_UTILS_TD), 'link' => self::PRO_LINK],
-            'move' => ['title' => \__('Did you know that?', REAL_UTILS_TD), 'image' => $this->getAssetsUrl('feature-queue.gif'), 'description' => \__('Your uploads can say more than a thousand words. Unfortunately, search engines do not understand the content of images, for example. Organize your uploads directly in meaningful folder names and achieve a better ranking in search engines!', REAL_UTILS_TD), 'link' => self::PRO_LINK],
+            'upload' => ['title' => \__('Did you know that?', 'devowl-wp-real-utils'), 'image' => $this->getAssetsUrl('feature-manual.jpg'), 'description' => \__('Your uploads can say more than a thousand words. Unfortunately, search engines do not understand the content of images, for example. Organize your uploads directly in meaningful folder names and achieve a better ranking in search engines!', 'devowl-wp-real-utils'), 'link' => self::PRO_LINK],
+            'move' => ['title' => \__('Did you know that?', 'devowl-wp-real-utils'), 'image' => $this->getAssetsUrl('feature-queue.gif'), 'description' => \__('Your uploads can say more than a thousand words. Unfortunately, search engines do not understand the content of images, for example. Organize your uploads directly in meaningful folder names and achieve a better ranking in search engines!', 'devowl-wp-real-utils'), 'link' => self::PRO_LINK],
         ];
     }
 }

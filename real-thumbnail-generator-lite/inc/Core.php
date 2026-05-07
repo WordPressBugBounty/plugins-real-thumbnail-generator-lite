@@ -60,7 +60,7 @@ class Core extends BaseCore implements IOverrideCore
     public function i18n()
     {
         parent::i18n();
-        $translatedUrl = \__('https://devowl.io/go/real-thumbnail-generator?source=rtg-lite', RTG_TD);
+        $translatedUrl = \__('https://devowl.io/go/real-thumbnail-generator?source=rtg-lite', 'real-thumbnail-generator-lite');
         \define('RTG_PRO_VERSION', $translatedUrl);
     }
     /**

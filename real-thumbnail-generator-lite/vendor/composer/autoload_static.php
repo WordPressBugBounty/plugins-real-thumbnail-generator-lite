@@ -53,7 +53,7 @@ class ComposerStaticInit86605978a0ea4fbdfd0a8fe1c6da3105
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'DevOwl\\RealThumbnailGenerator\\Vendor\\Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'DevOwl\\RealThumbnailGenerator\\Activator' => __DIR__ . '/../..' . '/inc/Activator.php',
         'DevOwl\\RealThumbnailGenerator\\AdInitiator' => __DIR__ . '/../..' . '/inc/AdInitiator.php',
         'DevOwl\\RealThumbnailGenerator\\Assets' => __DIR__ . '/../..' . '/inc/Assets.php',
@@ -86,7 +86,6 @@ class ComposerStaticInit86605978a0ea4fbdfd0a8fe1c6da3105
         'DevOwl\\RealThumbnailGenerator\\Vendor\\DevOwl\\RealProductManagerWpClient\\client\\TelemetryData' => __DIR__ . '/..' . '/devowl-wp/real-product-manager-wp-client/src/client/TelemetryData.php',
         'DevOwl\\RealThumbnailGenerator\\Vendor\\DevOwl\\RealProductManagerWpClient\\license\\License' => __DIR__ . '/..' . '/devowl-wp/real-product-manager-wp-client/src/license/License.php',
         'DevOwl\\RealThumbnailGenerator\\Vendor\\DevOwl\\RealProductManagerWpClient\\license\\LicenseActivation' => __DIR__ . '/..' . '/devowl-wp/real-product-manager-wp-client/src/license/LicenseActivation.php',
-        'DevOwl\\RealThumbnailGenerator\\Vendor\\DevOwl\\RealProductManagerWpClient\\license\\PluginUpdateChecker' => __DIR__ . '/..' . '/devowl-wp/real-product-manager-wp-client/src/license/PluginUpdateChecker.php',
         'DevOwl\\RealThumbnailGenerator\\Vendor\\DevOwl\\RealProductManagerWpClient\\license\\PluginUpdateLicensePool' => __DIR__ . '/..' . '/devowl-wp/real-product-manager-wp-client/src/license/PluginUpdateLicensePool.php',
         'DevOwl\\RealThumbnailGenerator\\Vendor\\DevOwl\\RealProductManagerWpClient\\license\\TelemetryData' => __DIR__ . '/..' . '/devowl-wp/real-product-manager-wp-client/src/license/TelemetryData.php',
         'DevOwl\\RealThumbnailGenerator\\Vendor\\DevOwl\\RealProductManagerWpClient\\rest\\Announcement' => __DIR__ . '/..' . '/devowl-wp/real-product-manager-wp-client/src/rest/Announcement.php',

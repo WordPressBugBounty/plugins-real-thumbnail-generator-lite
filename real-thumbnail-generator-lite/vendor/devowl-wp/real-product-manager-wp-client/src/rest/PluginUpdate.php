@@ -95,7 +95,7 @@ class PluginUpdate
             return new WP_Error('rest_not_found', 'Not found', ['status' => 404]);
         } else {
             $skip = $initiator->getPluginUpdater()->getCurrentBlogLicense()->getActivation()->skip();
-            return $skip === \false ? new WP_Error('rest_error', \__('Something went wrong. Please try again later!', RPM_WP_CLIENT_TD), ['status' => 500]) : new WP_REST_Response(['success' => $skip]);
+            return $skip === \false ? new WP_Error('rest_error', \__('Something went wrong. Please try again later!', 'devowl-wp-real-product-manager-wp-client'), ['status' => 500]) : new WP_REST_Response(['success' => $skip]);
         }
     }
     /**
@@ -279,7 +279,7 @@ class PluginUpdate
         $user = \get_userdata(\get_current_user_id());
         return ['slug' => $slug, 'licenses' => $licenses, 'hasInteractedWithFormOnce' => $licenseActivation->hasInteractedWithFormOnce(), 'name' => $initiator->getPluginName(), 'needsLicenseKeys' => $initiator->isExternalUpdateEnabled(), 'privacyProvider' => $initiator->getPrivacyProvider(), 'privacyPolicy' => $initiator->getPrivacyPolicy(), 'accountSiteUrl' => $initiator->getAccountSiteUrl(), 'additionalCheckboxes' => \array_map(function ($arr) {
             return ['id' => $arr['id'], 'text' => $arr['text']];
-        }, $initiator->formAdditionalCheckboxes()), 'licenseKeyHelpUrl' => $initiator->getLicenseKeyHelpUrl(), 'allowsAutoUpdates' => $initiator->isAutoUpdatesEnabled(), 'allowsTelemetry' => $initiator->isTelemetryEnabled(), 'allowsNewsletter' => $initiator->isNewsletterEnabled(), 'announcementsActive' => $initiator->getPluginUpdater()->getAnnouncementPool()->isActive(), 'potentialNewsletterUser' => ['firstName' => $user->first_name, 'email' => $user->user_email], 'checkUpdateLink' => $initiator->getPluginUpdater()->getPluginUpdateChecker()->getCheckUpdateLink(), 'showBlogName' => \is_multisite(), 'showNetworkWideUpdateIssueNotice' => \is_multisite() ? !\is_plugin_active_for_network(\plugin_basename($initiator->getPluginFile())) : \false];
+        }, $initiator->formAdditionalCheckboxes()), 'licenseKeyHelpUrl' => $initiator->getLicenseKeyHelpUrl(), 'allowsAutoUpdates' => $initiator->isAutoUpdatesEnabled(), 'allowsTelemetry' => $initiator->isTelemetryEnabled(), 'allowsNewsletter' => $initiator->isNewsletterEnabled(), 'announcementsActive' => $initiator->getPluginUpdater()->getAnnouncementPool()->isActive(), 'potentialNewsletterUser' => ['firstName' => $user->first_name, 'email' => $user->user_email], 'checkUpdateLink' => $initiator->getPluginUpdater()->getCheckUpdateLink(), 'showBlogName' => \is_multisite(), 'showNetworkWideUpdateIssueNotice' => \is_multisite() ? !\is_plugin_active_for_network(\plugin_basename($initiator->getPluginFile())) : \false];
     }
     /**
      * New instance.

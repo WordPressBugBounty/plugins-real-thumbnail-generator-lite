@@ -21,7 +21,8 @@ if (!function_exists('rtg_skip_already_deactivate_lite')) {
      */
     function rtg_skip_already_deactivate_lite() {
         // Avoid doing this in local stack as we do not have pro and lite difference in slug
-        if (defined('DEVOWL_WP_DEV') && constant('DEVOWL_WP_DEV') && $_SERVER['SERVER_PORT'] === strval(10000)) {
+        $serverPort = isset($_SERVER['SERVER_PORT']) ? sanitize_text_field(wp_unslash($_SERVER['SERVER_PORT'])) : '';
+        if (defined('DEVOWL_WP_DEV') && constant('DEVOWL_WP_DEV') && $serverPort === '10000') {
             return;
         }
 

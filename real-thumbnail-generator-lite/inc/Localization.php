@@ -26,9 +26,9 @@ class Localization
     protected function getPackageInfo($type)
     {
         if ($type === Constants::LOCALIZATION_BACKEND) {
-            return [RTG_PATH . '/languages', RTG_TD];
+            return [RTG_PATH . '/languages', 'real-thumbnail-generator-lite'];
         } else {
-            return [RTG_PATH . '/' . Constants::LOCALIZATION_PUBLIC_JSON_I18N, RTG_TD];
+            return [RTG_PATH . '/' . Constants::LOCALIZATION_PUBLIC_JSON_I18N, 'real-thumbnail-generator-lite'];
         }
     }
 }

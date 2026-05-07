@@ -90,7 +90,7 @@ class Service
     {
         $initiator = Core::getInstance()->getInitiator($slug);
         if ($initiator === null) {
-            return new WP_Error('rest_invalid_param', \__('No such plugin slug available.', REAL_UTILS_TD), ['status' => 400]);
+            return new WP_Error('rest_invalid_param', \__('No such plugin slug available.', 'devowl-wp-real-utils'), ['status' => 400]);
         }
         $pluginName = $initiator->getPluginBase()->getCore()->getPluginData('Name');
         \wp_remote_post($apiHost . 'wp-json/devowl-site/v1/support', ['method' => 'POST', 'body' => ['name' => $email, 'email' => $email, 'type' => 'deactivateFeedback', 'body' => 'WordPress Plugin: ' . $pluginName . '
@@ -119,7 +119,7 @@ Feedback: ' . $reason . '
         $force = $request->get_param('force');
         $impl = Core::getInstance()->getCrossSelling($slug);
         if ($impl === null) {
-            return new WP_Error('rest_error', \__('The abstract implementation for your slug could not be found.', REAL_UTILS_TD));
+            return new WP_Error('rest_error', \__('The abstract implementation for your slug could not be found.', 'devowl-wp-real-utils'));
         }
         $result = $impl->dismiss($action, $force);
         // Currently, ignore errors

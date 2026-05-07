@@ -12,15 +12,15 @@ if (!function_exists('rtg_skip_rest_admin_notice')) {
             global $wp_version;
             echo '<div class=\'notice notice-error\'>
 				<p><strong>' .
-                $data['Name'] .
+                esc_html($data['Name']) .
                 '</strong> could not be initialized because you are running WordPress < 4.7 (' .
-                $wp_version .
+                esc_html($wp_version) .
                 '). If WordPress < 4.7 the plugin needs another plugin <strong>WordPress REST API (Version 2)</strong> to provide needed functionality.
 				<a href="' .
-                admin_url('plugin-install.php?s=WordPress+REST+API+(Version+2)&tab=search&type=term') .
+                esc_url(admin_url('plugin-install.php?s=WordPress+REST+API+(Version+2)&tab=search&type=term')) .
                 '">Show in plugin finder</a> or 
 				<a href="' .
-                admin_url('plugin-install.php?tab=plugin-information&plugin=rest-api&TB_iframe=true') .
+                esc_url(admin_url('plugin-install.php?tab=plugin-information&plugin=rest-api&TB_iframe=true')) .
                 '">install plugin directly</a>.
 			</div>';
         }

@@ -81,16 +81,17 @@ class Service
         if (!isset($GLOBALS[self::NOTICE_CORRUPT_REST_API_ID]) && !$isUpdateCorePage) {
             $GLOBALS[self::NOTICE_CORRUPT_REST_API_ID] = \true;
             $securityPlugins = $this->getSecurityPlugins();
-            echo \sprintf('<div id="notice-corrupt-rest-api" class="hidden notice notice-warning" style="display:none;"><p>%s</p><ul style="list-style:circle;margin-left:30px;"></ul><p>%s</p><p>%s</p><textarea readonly="readonly" style="width:100%%;margin-bottom:5px;" rows="4"></textarea></div>', \sprintf(
+            $securityPluginsText = \count($securityPlugins) > 0 ? ' (' . \esc_html(\join(', ', $securityPlugins)) . ')' : '';
+            echo \sprintf('<div id="notice-corrupt-rest-api" class="hidden notice notice-warning" style="display:none;"><p>%s</p><ul style="list-style:circle;margin-left:30px;"></ul><p>%s</p><p>%s</p><textarea readonly="readonly" style="width:100%%;margin-bottom:5px;" rows="4"></textarea></div>', \wp_kses_post(\sprintf(
                 // translators:
                 \__('<strong>An unexpected network error has occurred!</strong> One or more WordPress plugins tried to call the WordPress REST API, which failed. Most likely a <strong>security plugin%s</strong>, a web <strong>server configuration</strong> or active <strong>ad-blocker extension</strong> installed on your browser disabled the REST API. Please make sure that the following REST API namespaces are reachable to use your plugin without problems:', 'devowl-wp-utils'),
-                \count($securityPlugins) > 0 ? ' (' . \join(', ', $securityPlugins) . ')' : ''
-            ), \sprintf(
+                $securityPluginsText
+            )), \wp_kses_post(\sprintf(
                 // translators:
                 \__('What is the WordPress REST API and how to enable it? %1$sLearn more%2$s.', 'devowl-wp-utils'),
                 '<a href="' . \esc_attr(\__('https://devowl.io/knowledge-base/wordpress-rest-api-does-not-respond/', 'devowl-wp-utils')) . '" target="_blank" rel="noreferrer">',
                 '</a>'
-            ), \__('In the text box below you will find a technical listing of the last 10 failed network requests:', 'devowl-wp-utils'));
+            )), \esc_html__('In the text box below you will find a technical listing of the last 10 failed network requests:', 'devowl-wp-utils'));
         }
     }
     /**

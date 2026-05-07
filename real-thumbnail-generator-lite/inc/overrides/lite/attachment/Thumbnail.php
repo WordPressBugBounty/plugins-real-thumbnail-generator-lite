@@ -24,6 +24,6 @@ trait Thumbnail
     // Documented in IOverrideThumbnail
     public function deleteUnused($ids)
     {
-        return new WP_Error('rest_rtg_lite', \__('This feature is not available in the free version.', RTG_TD), ['status' => 500]);
+        return new WP_Error('rest_rtg_lite', \__('This feature is not available in the free version.', 'real-thumbnail-generator-lite'), ['status' => 500]);
     }
 }

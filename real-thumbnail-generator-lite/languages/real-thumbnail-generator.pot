@@ -1,5 +1,5 @@
 # Copyright (C) 2026 devowl.io
-# This file is distributed under the same license as the Real Thumbnail Generator plugin.
+# This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
 "Project-Id-Version: n/a\n"
@@ -66,43 +66,43 @@ msgstr ""
 msgid "In the PRO version you can also delete unused thumbnail sizes - this can be done for one or all files with one click."
 msgstr ""
 
-#: inc/AdInitiator.php:107
-#: inc/view/View.php:28
-#: inc/view/View.php:115
+#: inc/AdInitiator.php:108
+#: inc/view/View.php:31
+#: inc/view/View.php:120
 msgid "Regenerate Thumbnails"
 msgstr ""
 
 #. translators:
-#: inc/attachment/Regenerate.php:249
+#: inc/attachment/Regenerate.php:250
 #, php-format
 msgid "The thumbnails of image ID %d could not be generated for an unknown reason."
 msgstr ""
 
-#: inc/attachment/Thumbnail.php:79
+#: inc/attachment/Thumbnail.php:81
 msgid "The given image was not found on server."
 msgstr ""
 
-#: inc/attachment/Thumbnail.php:83
+#: inc/attachment/Thumbnail.php:88
 msgid "You have not the permissions to regenerate thumbnails."
 msgstr ""
 
-#: inc/attachment/Thumbnail.php:89
+#: inc/attachment/Thumbnail.php:97
 msgid "The given post ID is not an image."
 msgstr ""
 
-#: inc/attachment/Thumbnail.php:193
+#: inc/attachment/Thumbnail.php:202
 msgid "Not found"
 msgstr ""
 
-#: inc/attachment/Thumbnail.php:245
+#: inc/attachment/Thumbnail.php:254
 msgid "Not generated"
 msgstr ""
 
-#: inc/attachment/Thumbnail.php:251
+#: inc/attachment/Thumbnail.php:260
 msgid "Disrupted"
 msgstr ""
 
-#: inc/attachment/Thumbnail.php:258
+#: inc/attachment/Thumbnail.php:267
 msgid "Greater than original"
 msgstr ""
 
@@ -122,7 +122,7 @@ msgstr ""
 msgid "The pattern is invalid"
 msgstr ""
 
-#: inc/overrides/lite/attachment/Thumbnail.php:24
+#: inc/overrides/lite/attachment/Thumbnail.php:26
 msgid "This feature is not available in the free version."
 msgstr ""
 
@@ -130,23 +130,23 @@ msgstr ""
 msgid "One or more thumbnail sizes could not be deleted. Please check the read and write permissions of the upload folder (usually wp-content/uploads/)!"
 msgstr ""
 
-#: inc/overrides/pro/attachment/Thumbnail.php:105
+#: inc/overrides/pro/attachment/Thumbnail.php:107
 msgid "Something went wrong."
 msgstr ""
 
-#: inc/overrides/pro/editor/Adapter.php:41
+#: inc/overrides/pro/editor/Adapter.php:46
 msgid "Image resizing failed."
 msgstr ""
 
-#: inc/rest/Service.php:81
+#: inc/rest/Service.php:83
 msgid "Please use a chunk size greater than 0!"
 msgstr ""
 
-#: inc/rest/Service.php:90
+#: inc/rest/Service.php:93
 msgid "The defined Thumbnail folder and file name is not usable. Please check that it is syntactically correct!"
 msgstr ""
 
-#: inc/rest/Service.php:134
+#: inc/rest/Service.php:137
 msgid "Forbidden"
 msgstr ""
 
@@ -154,21 +154,21 @@ msgstr ""
 msgid "https://devowl.io/knowledge-base/codecanyon-where-can-i-find-my-license-key/"
 msgstr ""
 
-#: inc/view/View.php:51
+#: inc/view/View.php:55
 msgid "Thumbnails"
 msgstr ""
 
 #. translators:
-#: inc/view/View.php:58
+#: inc/view/View.php:62
 #, php-format
 msgid "%1$d of %2$s registered"
 msgstr ""
 
-#: inc/view/View.php:66
+#: inc/view/View.php:70
 msgid "More"
 msgstr ""
 
-#: inc/view/View.php:71
-#: inc/view/View.php:93
+#: inc/view/View.php:75
+#: inc/view/View.php:97
 msgid "Regenerate"
 msgstr ""

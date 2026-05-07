@@ -394,7 +394,7 @@ trait Localization
             }
             $downloadPreviousError = $downloadError->get();
             if ($downloadPreviousError !== \false) {
-                echo \sprintf('<div class="notice notice-warning"><p>%s &bull; <a href="%s">%s</a></p></div>', $downloadPreviousError['message'], \esc_url(\add_query_arg([$downloadError->getName() => \true, '_wpnonce' => \wp_create_nonce($downloadError->getName())])), \__('Retry', 'devowl-wp-utils'));
+                echo \sprintf('<div class="notice notice-warning"><p>%s &bull; <a href="%s">%s</a></p></div>', \esc_html($downloadPreviousError['message']), \esc_url(\add_query_arg([$downloadError->getName() => \true, '_wpnonce' => \wp_create_nonce($downloadError->getName())])), \esc_html__('Retry', 'devowl-wp-utils'));
             }
         }
     }

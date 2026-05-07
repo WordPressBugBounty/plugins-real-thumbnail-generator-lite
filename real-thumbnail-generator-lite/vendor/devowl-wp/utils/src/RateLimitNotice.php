@@ -57,13 +57,14 @@ class RateLimitNotice
             $devowlPlugins = Utils::joinWithAndSeparator(Utils::getActivePluginsMap(\false, function ($data) {
                 return \strpos($data['AuthorName'] ?? '', 'devowl.io') !== \false;
             }), \__(' and ', 'devowl-wp-utils'));
-            echo \sprintf('<div class="notice notice-warning"><p>%s</p><p><a href="%s">%s</a></p></div>', \sprintf(
+            $supportUrl = \esc_url('https://devowl.io/support/');
+            echo \sprintf('<div class="notice notice-warning"><p>%s</p><p><a href="%s">%s</a></p></div>', \wp_kses_post(\sprintf(
                 // translators:
                 \__('Your WordPress unexpectedly requests the license server and cloud services of <strong>%1$s</strong> exceptionally often (URL: <code>%3$s</code>). This indicates a misconfiguration of your WordPress system, which can also affect the loading speed of your website or cause malfunctions. Please check with your technical contact what is configured incorrectly! Alternatively, you can <a href="%2$s" target="_blank">open a support ticket</a> at the plugin manufacturer support.', 'devowl-wp-utils'),
-                $devowlPlugins,
-                \esc_url(\__('https://devowl.io/support/', 'devowl-wp-utils')),
-                $url
-            ), \esc_url(\add_query_arg([$urlOption->getName() => \true, '_wpnonce' => \wp_create_nonce($urlOption->getName())])), \__('I have solved the problem (hide the message until the next occurrence of the error)', 'devowl-wp-utils'));
+                \esc_html($devowlPlugins),
+                $supportUrl,
+                \esc_html($url)
+            )), \esc_url(\add_query_arg([$urlOption->getName() => \true, '_wpnonce' => \wp_create_nonce($urlOption->getName())])), \esc_html__('I have solved the problem (hide the message until the next occurrence of the error)', 'devowl-wp-utils'));
         }
     }
     /**

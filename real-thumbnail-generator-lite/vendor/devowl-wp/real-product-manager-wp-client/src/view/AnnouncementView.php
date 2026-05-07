@@ -53,15 +53,21 @@ class AnnouncementView
             // Get dismiss link
             $pool->syncViewStatus($a);
             if ($useBanner) {
-                echo \sprintf('<div class="notice" style="background: none; border: none; box-shadow: none; margin: 5px 0; padding: 0;">%s<p>%s</p></div>', $this->img($a), $a->isDismissible() ? \sprintf('<a href="#" onClick="%s">%s</a>', \esc_js($this->dismissOnClickHandler($a)), \__('Dismiss', RPM_WP_CLIENT_TD)) : '');
+                echo \sprintf(
+                    '<div class="notice" style="background: none; border: none; box-shadow: none; margin: 5px 0; padding: 0;">%s<p>%s</p></div>',
+                    $this->img($a),
+                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- img returns structured markup.
+                    $a->isDismissible() ? \sprintf('<a href="#" onClick="%s">%s</a>', \esc_js($this->dismissOnClickHandler($a)), \esc_html__('Dismiss', 'devowl-wp-real-product-manager-wp-client')) : ''
+                );
             } else {
                 echo \sprintf(
                     // Use custom style to overlap the notice over the logo
                     '<div class="notice notice-%s" style="padding-right:38px;position:relative;">%s%s%s%s</div>',
-                    $a->getSeverity(),
+                    \esc_attr($a->getSeverity()),
                     $this->img($a),
-                    empty($a->getTitle()) ? '' : \sprintf('<p><strong>%s</strong></p>', $a->getTitle()),
-                    empty($a->getText()) ? '' : \sprintf('<p>%s</p>', $a->getText()),
+                    // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- img returns structured markup.
+                    empty($a->getTitle()) ? '' : \sprintf('<p><strong>%s</strong></p>', \wp_kses_post($a->getTitle())),
+                    empty($a->getText()) ? '' : \sprintf('<p>%s</p>', \wp_kses_post($a->getText())),
                     // We do not use `is-dismissible` class as we can not add any JS event
                     $a->isDismissible() ? \sprintf('<button type="button" class="notice-dismiss" onClick="%s"></button>', \esc_js($this->dismissOnClickHandler($a))) : ''
                 );
@@ -80,7 +86,7 @@ class AnnouncementView
         }
         $img = \sprintf('<img %s style="max-width: 100%%; height: auto; display: block; margin: 10px 0;" />', $this->srcset($a));
         $link = $a->getGraphicFileLink();
-        return empty($link) ? $img : \sprintf('<a href="%s" target="_blank">%s</a>', $link, $img);
+        return empty($link) ? $img : \sprintf('<a href="%s" target="_blank">%s</a>', \esc_url($link), $img);
     }
     /**
      * Return `src` and `srcset` attributes as string for a given announcement.
@@ -90,9 +96,9 @@ class AnnouncementView
     protected function srcset($a)
     {
         if (empty($a->getGraphicUrlRetina())) {
-            return \sprintf('src="%s"', $a->getGraphicUrl());
+            return \sprintf('src="%s"', \esc_url($a->getGraphicUrl()));
         }
-        return \sprintf('src="%1$s" srcset="%1$s 1x, %2$s 2x"', $a->getGraphicUrl(), $a->getGraphicUrlRetina());
+        return \sprintf('src="%1$s" srcset="%1$s 1x, %2$s 2x"', \esc_url($a->getGraphicUrl()), \esc_url($a->getGraphicUrlRetina()));
     }
     /**
      * Dismiss-functionality is handled through a inline-onclick handler because we

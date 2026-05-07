@@ -100,43 +100,43 @@ msgid "Products of %s"
 msgstr ""
 
 #. translators:
-#: view/Options.php:70
+#: view/Options.php:67
 #, php-format
 msgid "Show advertising for not yet installed %s products in the WordPress backend"
 msgstr ""
 
-#: WelcomePage.php:59
+#: WelcomePage.php:62
 msgid "Learn more about this plugin"
 msgstr ""
 
-#: WelcomePage.php:66
-#: WelcomePage.php:160
+#: WelcomePage.php:69
+#: WelcomePage.php:166
 msgid "Support"
 msgstr ""
 
-#: WelcomePage.php:71
-#: WelcomePage.php:163
+#: WelcomePage.php:74
+#: WelcomePage.php:169
 msgid "Rate plugin"
 msgstr ""
 
-#: WelcomePage.php:152
+#: WelcomePage.php:158
 msgid "Version"
 msgstr ""
 
-#: WelcomePage.php:157
+#: WelcomePage.php:163
 msgid "Info"
 msgstr ""
 
-#: WelcomePage.php:171
+#: WelcomePage.php:177
 msgid "Key feature"
 msgid_plural "Key features"
 msgstr[0] ""
 msgstr[1] ""
 
-#: WelcomePage.php:247
+#: WelcomePage.php:253
 msgid "Additional plugins by devowl.io"
 msgstr ""
 
-#: WelcomePage.php:328
+#: WelcomePage.php:334
 msgid "Available in"
 msgstr ""

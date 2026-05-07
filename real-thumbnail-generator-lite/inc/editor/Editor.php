@@ -105,14 +105,14 @@ class Editor
             $filename = $this->generate($patternFilename, $i, 'replace_filename');
             // Catch errors
             if (!empty($filename) && empty($filename)) {
-                $errors['filename_valid'] = \__('The filename is not valid', RTG_TD);
+                $errors['filename_valid'] = \__('The filename is not valid', 'real-thumbnail-generator-lite');
             }
             if (!empty($filename) && \strpos($filename, '.jpg') === \false) {
-                $errors['filename_ext'] = \__('The filename has no extension', RTG_TD);
+                $errors['filename_ext'] = \__('The filename has no extension', 'real-thumbnail-generator-lite');
             }
             $join = \trailingslashit($folder) . $filename;
             if (!$this->isValid($join)) {
-                $errors['filename_ext'] = \__('The pattern is invalid', RTG_TD);
+                $errors['filename_ext'] = \__('The pattern is invalid', 'real-thumbnail-generator-lite');
             }
             $folders[] = $folder;
             $filenames[] = $filename;

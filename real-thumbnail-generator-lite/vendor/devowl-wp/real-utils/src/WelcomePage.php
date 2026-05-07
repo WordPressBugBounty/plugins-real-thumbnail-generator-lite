@@ -20,7 +20,7 @@ class WelcomePage
     const COLOR_BADGE_LITE = '#28aa00';
     const COLOR_BADGE_PRO = '#0073aa';
     const EXCLUDE_DESCRIPTION_CONTAINS = 'micro add-on';
-    const PLUGIN_SLUG_FIXER = ['real-category-library-lite' => 'real-category-library', 'real-media-library-lite' => 'real-media-library', 'real-thumbnail-generator-lite' => 'real-thumbnail-generator', 'real-cookie-banner' => 'real-cookie-banner-pro'];
+    const PLUGIN_SLUG_FIXER = ['real-category-library' => 'real-category-library-lite', 'real-category-library-lite' => 'real-category-library', 'real-media-library' => 'real-media-library-lite', 'real-media-library-lite' => 'real-media-library', 'real-thumbnail-generator' => 'real-thumbnail-generator-lite', 'real-thumbnail-generator-lite' => 'real-thumbnail-generator', 'real-cookie-banner' => 'real-cookie-banner-pro'];
     private $initiator;
     /**
      * C'tor.
@@ -42,11 +42,11 @@ class WelcomePage
     {
         if ($plugin === \plugin_basename($this->getInitiator()->getPluginFile())) {
             $linkTemplate = '<a href="%s" target="%s">%s</a>';
-            $links[] = \sprintf($linkTemplate, $this->getWelcomePageLink(), '_self', \__('Learn more about this plugin', REAL_UTILS_TD));
-            $links[] = \sprintf($linkTemplate, $this->getInitiator()->getSupportLink(), '_blank', \__('Support', REAL_UTILS_TD));
+            $links[] = \sprintf($linkTemplate, $this->getWelcomePageLink(), '_self', \__('Learn more about this plugin', 'devowl-wp-real-utils'));
+            $links[] = \sprintf($linkTemplate, $this->getInitiator()->getSupportLink(), '_blank', \__('Support', 'devowl-wp-real-utils'));
             $rateLink = $this->getInitiator()->getRateLink();
             if ($rateLink !== null) {
-                $links[] = \sprintf($linkTemplate, $rateLink, '_blank', \__('Rate plugin', REAL_UTILS_TD));
+                $links[] = \sprintf($linkTemplate, $rateLink, '_blank', \__('Rate plugin', 'devowl-wp-real-utils'));
             }
         }
         return $links;
@@ -58,7 +58,9 @@ class WelcomePage
      */
     public function activated_plugin($plugin)
     {
-        $fromBulkAction = isset($_POST['action']) && $_POST['action'] === 'activate-selected';
+        // phpcs:disable WordPress.Security.NonceVerification.Missing -- activation hook context check, no state mutation based on user data.
+        $fromBulkAction = isset($_POST['action']) && \sanitize_text_field(\wp_unslash($_POST['action'])) === 'activate-selected';
+        // phpcs:enable
         $isWpCli = \defined('WP_CLI') && \constant('WP_CLI');
         if (!$fromBulkAction && !$isWpCli && $plugin === \plugin_basename($this->getInitiator()->getPluginFile())) {
             $redirectState = TransientHandler::get($this->getInitiator(), TransientHandler::TRANSIENT_REDIRECT_AFTER_ACTIVATE, TransientHandler::TRANSIENT_REDIRECT_AFTER_ACTIVATE_NOT_REGISTERED);
@@ -77,7 +79,7 @@ class WelcomePage
             $redirectState = TransientHandler::get($this->getInitiator(), TransientHandler::TRANSIENT_REDIRECT_AFTER_ACTIVATE, TransientHandler::TRANSIENT_REDIRECT_AFTER_ACTIVATE_NOT_REGISTERED);
             if ($redirectState === TransientHandler::TRANSIENT_REDIRECT_AFTER_ACTIVATE_AWAITING_REDIRECT) {
                 TransientHandler::set($this->getInitiator(), TransientHandler::TRANSIENT_REDIRECT_AFTER_ACTIVATE, TransientHandler::TRANSIENT_REDIRECT_AFTER_ACTIVATE_REDIRECTED);
-                echo \sprintf('<meta http-equiv="refresh" content="0; URL=%s" />', $this->getWelcomePageLink());
+                echo \sprintf('<meta http-equiv="refresh" content="0; URL=%s" />', \esc_url($this->getWelcomePageLink()));
             }
         }
     }
@@ -102,18 +104,18 @@ class WelcomePage
         $string = '<div class="wrap about-wrap full-width-layout" data-slug="%slug">
     <h1>%title</h1>
     <p class="about-text">%subtitle</p>
-    <div class="wp-badge" style="background-image: url(\'%logoUrl\');">' . \__('Version', REAL_UTILS_TD) . ' %version</div>
+    <div class="wp-badge" style="background-image: url(\'%logoUrl\');">' . \__('Version', 'devowl-wp-real-utils') . ' %version</div>
 
     <nav class="nav-tab-wrapper wp-clearfix">
-        <a href="#" class="nav-tab nav-tab-active">' . \__('Info', REAL_UTILS_TD) . '</a>
-        <a target="_blank" href="%supportLink" class="nav-tab">' . \__('Support', REAL_UTILS_TD) . '</a>
-        <a target="_blank" href="%rateLink" class="nav-tab" style="%styleRateLink">' . \__('Rate plugin', REAL_UTILS_TD) . '</a>
+        <a href="#" class="nav-tab nav-tab-active">' . \__('Info', 'devowl-wp-real-utils') . '</a>
+        <a target="_blank" href="%supportLink" class="nav-tab">' . \__('Support', 'devowl-wp-real-utils') . '</a>
+        <a target="_blank" href="%rateLink" class="nav-tab" style="%styleRateLink">' . \__('Rate plugin', 'devowl-wp-real-utils') . '</a>
     </nav>
 
     <div class="about-wrap-content">
     	<div class="feature-section has-1-columns column-links">
             %heroButton
-            <h2>' . \_n('Key feature', 'Key features', $keyFeaturesCount, REAL_UTILS_TD) . '</h2>
+            <h2>' . \_n('Key feature', 'Key features', $keyFeaturesCount, 'devowl-wp-real-utils') . '</h2>
     	</div>
 
 		%featuresHtml
@@ -126,7 +128,9 @@ class WelcomePage
         $heroButton = isset($heroButton) ? \sprintf('<a href="%s" class="button button-primary button-hero" style="margin-top: 40px;"><strong>%s</strong></a>', \esc_url(\add_query_arg('feature', 'welcome-page', $heroButton[1])), $heroButton[0]) : '';
         $data = ['%slug' => $this->getInitiator()->getPluginSlug(), '%title' => $pluginData['Name'], '%version' => $pluginData['Version'], '%subtitle' => \str_replace('<cite>', \sprintf('<br /><cite>', Core::getInstance()->getBaseAssetsUrl('devowl.io-logo.svg')), $pluginData['Description']), '%logoUrl' => $this->getInitiator()->getAssetsUrl('logo.svg'), '%supportLink' => $this->getInitiator()->getSupportLink(), '%rateLink' => $this->getInitiator()->getRateLink(), '%styleRateLink' => $this->getInitiator()->getRateLink() === null ? 'display:none' : '', '%heroButton' => $heroButton, '%featuresHtml' => $this->transformKeyFeaturesHtml(), '%currentEmail' => \esc_attr(\get_userdata(\get_current_user_id())->user_email), '%ourPluginsHeader' => $ourPluginsOutput['header']];
         echo \str_replace(\array_keys($data), \array_values($data), $string);
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- string is escaped in transformKeyFeaturesHtml.
         echo $ourPluginsOutput['table'];
+        // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- table is escaped in our_plugins_output.
     }
     /**
      * Display our plugins by using the native list table.
@@ -156,7 +160,7 @@ class WelcomePage
             $outputTable .= \ob_get_contents();
             \ob_end_clean();
             $outputTable .= '</div>';
-            $outputHeader .= \sprintf('<hr /><div class="feature-section has-1-columns column-links"><h2>%s</h2></div>', \__('Additional plugins by devowl.io', REAL_UTILS_TD));
+            $outputHeader .= \sprintf('<hr /><div class="feature-section has-1-columns column-links"><h2>%s</h2></div>', \__('Additional plugins by devowl.io', 'devowl-wp-real-utils'));
         }
         return ['table' => $outputTable, 'header' => $outputHeader];
     }
@@ -222,7 +226,7 @@ class WelcomePage
             // Show "Available in" badges (available_in)
             $availableIn = '';
             if (isset($feature['available_in'])) {
-                $availableIn .= '<p class="description">' . \__('Available in', REAL_UTILS_TD) . ': ';
+                $availableIn .= '<p class="description">' . \__('Available in', 'devowl-wp-real-utils') . ': ';
                 foreach ($feature['available_in'] as $badge) {
                     $availableIn .= \sprintf($badgeTemplate, $badge[1], $badge[0]);
                 }
@@ -267,7 +271,7 @@ class WelcomePage
      */
     public function isCurrentPage()
     {
-        return \is_admin() && isset($_GET['page']) && $_GET['page'] === $this->getInitiator()->getPluginSlug() . WelcomePage::PAGE_SUFFIX;
+        return \is_admin() && isset($_GET['page']) && \sanitize_text_field(\wp_unslash($_GET['page'])) === $this->getInitiator()->getPluginSlug() . WelcomePage::PAGE_SUFFIX;
     }
     /**
      * Create instance.

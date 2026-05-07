@@ -56,7 +56,7 @@ class CrossRealCookieBanner extends AbstractCrossSelling
      */
     public function getMeta()
     {
-        return ['gdpr-compliant' => ['title' => \__('Is your website GDPR compliant?', REAL_UTILS_TD), 'image' => $this->getAssetsUrl(\__('cookie-banner-frontend.png', REAL_UTILS_TD)), 'description' => \__('Websites targeting EU users and setting non-essential cookies need an opt-in cookie banner. We recommend Real Cookie Banner as an ePrivacy Policy and GDPR compliant solution for WordPress.', REAL_UTILS_TD), 'link' => \__('https://devowl.io/go/real-cookie-banner?source=cross-rcb', REAL_UTILS_TD)]];
+        return ['gdpr-compliant' => ['title' => \__('Is your website GDPR compliant?', 'devowl-wp-real-utils'), 'image' => $this->getAssetsUrl(\__('cookie-banner-frontend.png', 'devowl-wp-real-utils')), 'description' => \__('Websites targeting EU users and setting non-essential cookies need an opt-in cookie banner. We recommend Real Cookie Banner as an ePrivacy Policy and GDPR compliant solution for WordPress.', 'devowl-wp-real-utils'), 'link' => \__('https://devowl.io/go/real-cookie-banner?source=cross-rcb', 'devowl-wp-real-utils')]];
     }
     /**
      * Check if the current WordPress instance has a plugin installed, which

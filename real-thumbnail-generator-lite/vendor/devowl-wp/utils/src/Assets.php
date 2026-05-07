@@ -21,6 +21,12 @@ trait Assets
      */
     private $handleToFeatures = [];
     /**
+     * Shared request-scoped registry of already printed preload URLs.
+     *
+     * @var string[]
+     */
+    private static $preloadedUrlsRegistry = [];
+    /**
      * For future implementations and updates of this class you can differ from BUMP version.
      * Increment, if needed.
      */
@@ -184,13 +190,13 @@ trait Assets
      */
     public function enablePreloadEnqueue($handles, $type = 'script', $preloadChunks = [])
     {
-        static $preloadedChunks = [];
         $handles = \is_array($handles) ? $handles : [$handles];
         $wp_dependencies = $type === 'script' ? \wp_scripts() : \wp_styles();
         foreach ($handles as $handle) {
             $this->handleToFeatures[$handle] = \array_merge($this->handleToFeatures[$handle] ?? [], [Constants::ASSETS_ADVANCED_ENQUEUE_FEATURE_PRELOADING]);
         }
-        \add_action('wp_head', function () use($handles, $type, $wp_dependencies, $preloadChunks, &$preloadedChunks) {
+        \add_action('wp_head', function () use($handles, $type, $wp_dependencies, $preloadChunks) {
+            $preloadedUrls =& self::$preloadedUrlsRegistry;
             foreach ($handles as $handle) {
                 $script = $wp_dependencies->query($handle);
                 if ($script !== \false) {
@@ -203,19 +209,24 @@ trait Assets
                         $src = \add_query_arg('ver', $ver, $src);
                     }
                     $src = \apply_filters('script_loader_src', $src, $handle);
-                    \printf('<link rel="preload" href="%s" as="%s" />
-', \esc_url($src), $type);
+                    if (!\in_array($src, $preloadedUrls, \true)) {
+                        $preloadedUrls[] = $src;
+                        \printf('<link rel="preload" href="%s" as="%s" />
+', \esc_url($src), \esc_attr($type));
+                    }
                     // Add chunk preloads if desired
                     $chunks = $wp_dependencies->get_data($handle, 'chunks');
                     if ($chunks) {
                         foreach ($chunks as $chunkName => $chunkUrl) {
-                            if (!\in_array($chunkName, $preloadChunks, \true) || \in_array($chunkUrl, $preloadedChunks, \true)) {
+                            if (!\in_array($chunkName, $preloadChunks, \true)) {
                                 continue;
                             }
                             $chunkUrl = \apply_filters('script_loader_src', $chunkUrl, $handle);
-                            $preloadedChunks[] = $chunkUrl;
-                            \printf('<link rel="preload" href="%s" as="%s" />
+                            if (!\in_array($chunkUrl, $preloadedUrls, \true)) {
+                                $preloadedUrls[] = $chunkUrl;
+                                \printf('<link rel="preload" href="%s" as="%s" />
 ', \esc_url($chunkUrl), 'script');
+                            }
                         }
                     }
                 }

@@ -56,7 +56,7 @@ class ClientUtils
             // Is the body empty and success code? E.g. `DELETE` requests
             return [];
         } else {
-            return new WP_Error(self::ERROR_CODE_CLIENT_PARSE, \__('Something went wrong while parsing an error message from the remote server.'), ['response' => $response]);
+            return new WP_Error(self::ERROR_CODE_CLIENT_PARSE, \__('Something went wrong while parsing an error message from the remote server.', 'devowl-wp-real-product-manager-wp-client'), ['response' => $response]);
         }
     }
     /**

@@ -70,7 +70,14 @@ class PluginUpdateView
     {
         $license = $this->getPluginUpdate()->getCurrentBlogLicense()->getActivation()->getHint();
         if (\is_array($license)) {
-            echo \sprintf('<div class="notice notice-%s" style="padding-right:38px;position:relative;"><p><strong>%s:</strong> %s &bull; %s</p></div>', $license['validateStatus'], $this->getPluginUpdate()->getInitiator()->getPluginName(), $license['help'], $this->getActivateLink());
+            echo \sprintf(
+                '<div class="notice notice-%s" style="padding-right:38px;position:relative;"><p><strong>%s:</strong> %s &bull; %s</p></div>',
+                \esc_attr($license['validateStatus']),
+                \esc_html($this->getPluginUpdate()->getInitiator()->getPluginName()),
+                $license['help'],
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- help is escaped.
+                $this->getActivateLink()
+            );
         }
     }
     /**
@@ -90,9 +97,14 @@ class PluginUpdateView
     	</div>
     </th>
 </tr>',
-            $wp_list_table->get_column_count(),
+            \absint($wp_list_table->get_column_count()),
             // translators:
-            \sprintf('<strong>%s</strong> %s', \__('You have not yet entered the license key.', RPM_WP_CLIENT_TD), $this->generateLicenseLink(\__('Activate the license to receive automatic updates.', RPM_WP_CLIENT_TD)))
+            \sprintf(
+                '<strong>%s</strong> %s',
+                \esc_html__('You have not yet entered the license key.', 'devowl-wp-real-product-manager-wp-client'),
+                // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- generateLicenseLink returns a link.
+                $this->generateLicenseLink(\__('Activate the license to receive automatic updates.', 'devowl-wp-real-product-manager-wp-client'))
+            )
         );
     }
     /**
@@ -102,7 +114,7 @@ class PluginUpdateView
      */
     public function generateLicenseLink($text)
     {
-        return \sprintf('<a href="#" %s="%s">%s</a>', self::CLICK_HANDLER_ATTRIBUTE, $this->getPluginUpdate()->getInitiator()->getPluginSlug(), $text);
+        return \sprintf('<a href="#" %s="%s">%s</a>', \esc_attr(self::CLICK_HANDLER_ATTRIBUTE), \esc_attr($this->getPluginUpdate()->getInitiator()->getPluginSlug()), \esc_html($text));
     }
     /**
      * Add a "Enter License" link to the plugins actions.
@@ -112,7 +124,7 @@ class PluginUpdateView
      */
     public function plugin_action_links($actions)
     {
-        $link = $this->generateLicenseLink(\__('License', RPM_WP_CLIENT_TD));
+        $link = $this->generateLicenseLink(\__('License', 'devowl-wp-real-product-manager-wp-client'));
         $actions[RPM_WP_CLIENT_SLUG] = $this->getPluginUpdate()->getCurrentBlogLicense()->isFulfilled() ? $link : \sprintf('<span style="font-weight:bold;">%s</span>', $link);
         return $actions;
     }
@@ -136,7 +148,7 @@ class PluginUpdateView
         $days = $this->getPluginUpdate()->getDaysSinceFirstInitialization();
         $dismissible = \true;
         // translators:
-        $text = \__('You have not yet activated a license for the %s plugin. Activate the licence to receive automatic updates.', RPM_WP_CLIENT_TD);
+        $text = \__('You have not yet activated a license for the %s plugin. Activate the licence to receive automatic updates.', 'devowl-wp-real-product-manager-wp-client');
         if (\defined('MATTHIASWEB_DEMO') && \constant('MATTHIASWEB_DEMO')) {
             return \false;
         }
@@ -152,34 +164,34 @@ class PluginUpdateView
                 break;
             case 4:
                 // translators:
-                $text = \__('Updates of %s are waiting for you when you activate your license. Activate your license in the settings now!', RPM_WP_CLIENT_TD);
+                $text = \__('Updates of %s are waiting for you when you activate your license. Activate your license in the settings now!', 'devowl-wp-real-product-manager-wp-client');
                 break;
             case 5:
                 // translators:
-                $text = \__('Activate your %s to use all features with great support. Activate now!', RPM_WP_CLIENT_TD);
+                $text = \__('Activate your %s to use all features with great support. Activate now!', 'devowl-wp-real-product-manager-wp-client');
                 break;
             case 6:
                 // translators:
-                $text = \__('You have not yet activated your %s license. Activate your license now in the settings!', RPM_WP_CLIENT_TD);
+                $text = \__('You have not yet activated your %s license. Activate your license now in the settings!', 'devowl-wp-real-product-manager-wp-client');
                 break;
             case 7:
                 // translators:
-                $text = \__('You are not allowed to use %s according to our license terms unless you have purchased a license. Activate it in the settings or buy one now!', RPM_WP_CLIENT_TD);
+                $text = \__('You are not allowed to use %s according to our license terms unless you have purchased a license. Activate it in the settings or buy one now!', 'devowl-wp-real-product-manager-wp-client');
                 break;
             case 8:
                 $dismissible = \false;
                 // translators:
-                $text = \__('Attention! Pirates distribute %s for free without a license. Activate your license in the settings to show that you are not a pirate!', RPM_WP_CLIENT_TD);
+                $text = \__('Attention! Pirates distribute %s for free without a license. Activate your license in the settings to show that you are not a pirate!', 'devowl-wp-real-product-manager-wp-client');
                 break;
             case 9:
                 $dismissible = \false;
                 // translators:
-                $text = \__('You are probably using an illegally purchased copy of %s without a license. Check your license now!', RPM_WP_CLIENT_TD);
+                $text = \__('You are probably using an illegally purchased copy of %s without a license. Check your license now!', 'devowl-wp-real-product-manager-wp-client');
                 break;
             default:
                 $dismissible = \false;
                 // translators:
-                $text = \__('You are probably using an illegal copy of %s. Purchase a license now or activate your license in the settings and continue using this software with a clear conscience!', RPM_WP_CLIENT_TD);
+                $text = \__('You are probably using an illegal copy of %s. Purchase a license now or activate your license in the settings and continue using this software with a clear conscience!', 'devowl-wp-real-product-manager-wp-client');
                 break;
         }
         $initiator = $this->getPluginUpdate()->getInitiator();
@@ -199,8 +211,8 @@ class PluginUpdateView
         return $onlyHref ? $href : \sprintf(
             // Force to reload the page so the hash works always (also in Plugins list)
             '<a href="%1$s" onclick="window.location.href=\'%1$s\';window.location.reload();">%2$s</a>',
-            $href,
-            \__('Activate now', RPM_WP_CLIENT_TD)
+            \esc_url($href),
+            \esc_html__('Activate now', 'devowl-wp-real-product-manager-wp-client')
         );
     }
     /**

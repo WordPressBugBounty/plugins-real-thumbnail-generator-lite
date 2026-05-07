@@ -182,6 +182,7 @@ class Regenerate
         if (0 === \error_reporting()) {
             return \false;
         }
+        // phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped -- Error details are wrapped in exception, not rendered output.
         throw new ErrorException($errstr, 0, $errno, $errfile, $errline);
     }
     /**
@@ -213,7 +214,7 @@ class Regenerate
         } else {
             return new WP_Error('generate-fails', \sprintf(
                 // translators:
-                \__('The thumbnails of image ID %d could not be generated for an unknown reason.', RTG_TD),
+                \__('The thumbnails of image ID %d could not be generated for an unknown reason.', 'real-thumbnail-generator-lite'),
                 $postId
             ));
         }

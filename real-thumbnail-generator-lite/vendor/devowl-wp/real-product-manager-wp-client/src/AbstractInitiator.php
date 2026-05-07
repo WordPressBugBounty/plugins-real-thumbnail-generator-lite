@@ -195,12 +195,12 @@ abstract class AbstractInitiator
     // Self-explaining
     public function getAccountSiteUrl()
     {
-        return \__('https://devowl.io/account', RPM_WP_CLIENT_TD);
+        return \__('https://devowl.io/account', 'devowl-wp-real-product-manager-wp-client');
     }
     // Self-explaining
     public function getLicenseKeyHelpUrl()
     {
-        return \__('https://devowl.io/knowledge-base/devowl-where-can-i-find-my-license-key/', RPM_WP_CLIENT_TD);
+        return \__('https://devowl.io/knowledge-base/devowl-where-can-i-find-my-license-key/', 'devowl-wp-real-product-manager-wp-client');
     }
     /**
      * Get the privacy provider.

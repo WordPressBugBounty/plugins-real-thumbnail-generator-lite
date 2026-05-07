@@ -58,15 +58,15 @@ class Thumbnail implements IOverrideThumbnail
     {
         $attachedFile = $attachedFile !== null ? $attachedFile : \get_attached_file($postId);
         if ($attachedFile === \false || !\file_exists($attachedFile)) {
-            return new WP_Error('not-found', \__('The given image was not found on server.', RTG_TD));
+            return new WP_Error('not-found', \__('The given image was not found on server.', 'real-thumbnail-generator-lite'));
         }
         if ($checkCap && !\current_user_can('manage_options')) {
-            return new WP_Error('no-permissions', \__('You have not the permissions to regenerate thumbnails.', RTG_TD));
+            return new WP_Error('no-permissions', \__('You have not the permissions to regenerate thumbnails.', 'real-thumbnail-generator-lite'));
         }
         $isImage = \wp_attachment_is_image($postId);
         $isPdf = $this->isPdf($postId);
         if (!($isImage || $isPdf)) {
-            return new WP_Error('not-an-image', \__('The given post ID is not an image.', RTG_TD));
+            return new WP_Error('not-an-image', \__('The given post ID is not an image.', 'real-thumbnail-generator-lite'));
         }
         // Get the metadata for the given attachment
         $meta = $meta !== null ? $meta : \wp_get_attachment_metadata($postId);
@@ -158,7 +158,7 @@ class Thumbnail implements IOverrideThumbnail
                     }
                 } else {
                     $filesFound = \false;
-                    $status = \__('Not found', RTG_TD);
+                    $status = \__('Not found', 'real-thumbnail-generator-lite');
                     $result['notFound'][$key] = $value;
                 }
                 $result['rows'][$key] = \array_merge($value, ['dimension' => $dimsString, 'status' => $status, 'href' => $href[0], 'needsRegeneration' => $needsRegeneration, 'registeredSize' => \is_array($registeredSize), 'filesFound' => $filesFound, 'unused' => \false]);
@@ -185,18 +185,18 @@ class Thumbnail implements IOverrideThumbnail
             $dimsString .= \is_numeric($value['height']) && $value['height'] ? $value['height'] : 'auto';
             // The size should be here
             if (!$disrupted && $dims !== \false && isset($meta['sizes']) && !isset($meta['sizes'][$key]) && ($meta['width'] > $value['width'] || $meta['height'] > $value['height'])) {
-                $status = \__('Not generated', RTG_TD);
+                $status = \__('Not generated', 'real-thumbnail-generator-lite');
                 $result['mustGenerate'][$key] = $value;
             }
             // Fix bug with failed PDF regeneration
             if ($disrupted) {
-                $status = \__('Disrupted', RTG_TD);
+                $status = \__('Disrupted', 'real-thumbnail-generator-lite');
                 $result['mustGenerate'][$key] = $value;
             }
             // Is not needed
             $notNeeded = $dims === \false && ($value['width'] > 0 || $value['height'] > 0);
             if ($notNeeded) {
-                $status = \__('Greater than original', RTG_TD);
+                $status = \__('Greater than original', 'real-thumbnail-generator-lite');
                 $result['unused'][$key] = $value;
             }
             // Generate output

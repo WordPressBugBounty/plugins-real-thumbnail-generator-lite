@@ -33,9 +33,9 @@ class Options
         if (Core::getInstance()->getCrossSellingHandler()->isAnyProInstalled() && \current_user_can('activate_plugins')) {
             \add_option(self::FIELD_NAME_CROSS_SELLING, \true);
             \register_setting('general', self::FIELD_NAME_CROSS_SELLING, ['type' => 'boolean']);
-            \add_settings_field(self::FIELD_NAME_CROSS_SELLING, '<label for="' . self::FIELD_NAME_CROSS_SELLING . '">' . \sprintf(
+            \add_settings_field(self::FIELD_NAME_CROSS_SELLING, '<label for="' . \esc_attr(self::FIELD_NAME_CROSS_SELLING) . '">' . \sprintf(
                 // translators:
-                \__('Products of %s', REAL_UTILS_TD),
+                \__('Products of %s', 'devowl-wp-real-utils'),
                 '<a href="https://devowl.io/" target="_blank">devowl.io</a>'
             ) . '</label>', [$this, 'html_cross_selling'], 'general');
         }
@@ -45,14 +45,11 @@ class Options
      */
     public function html_cross_selling()
     {
-        echo '<label>
-    <input type="checkbox" name="' . self::FIELD_NAME_CROSS_SELLING . '" ' . \checked(self::isCrossSellingActive(), \true, \false) . ' value="1" />
-    ' . \sprintf(
+        echo \sprintf('<label><input type="checkbox" name="%s" %s value="1" />%s</label>', \esc_attr(self::FIELD_NAME_CROSS_SELLING), \checked(self::isCrossSellingActive(), \true, \false), \sprintf(
             // translators:
-            \__('Show advertising for not yet installed %s products in the WordPress backend', REAL_UTILS_TD),
+            \esc_html__('Show advertising for not yet installed %s products in the WordPress backend', 'devowl-wp-real-utils'),
             '<a href="https://devowl.io/" target="_blank">devowl.io</a>'
-        ) . '
-</label>';
+        ));
     }
     /**
      * Check if cross-selling is activated.

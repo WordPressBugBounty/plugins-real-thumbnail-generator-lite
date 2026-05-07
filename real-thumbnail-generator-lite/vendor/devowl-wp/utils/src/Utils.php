@@ -137,7 +137,8 @@ class Utils
      */
     public static function isRest()
     {
-        if (\defined('REST_REQUEST') && \constant('REST_REQUEST') || isset($_GET['rest_route']) && \strpos(\trim($_GET['rest_route'], '\\/'), \rest_get_url_prefix(), 0) === 0) {
+        $restRoute = isset($_GET['rest_route']) ? \sanitize_text_field(\wp_unslash($_GET['rest_route'])) : '';
+        if (\defined('REST_REQUEST') && \constant('REST_REQUEST') || $restRoute !== '' && \strpos(\trim($restRoute, '\\/'), \rest_get_url_prefix(), 0) === 0) {
             return \true;
         }
         // (#3)

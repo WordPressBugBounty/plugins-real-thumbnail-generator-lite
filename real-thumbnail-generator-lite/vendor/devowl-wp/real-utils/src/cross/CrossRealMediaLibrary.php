@@ -44,8 +44,8 @@ class CrossRealMediaLibrary extends AbstractCrossSelling
     {
         return [
             // Grid and list view
-            'attachment-details' => ['title' => \__('File finally found?', REAL_UTILS_TD), 'image' => $this->getAssetsUrl('full-control.gif'), 'description' => \__('Your WordPress site will certainly continue to grow. Organize your media library with folders!', REAL_UTILS_TD), 'link' => self::PRO_LINK],
-            'insert-dialog' => ['title' => \__('Does it take long to find a file?', REAL_UTILS_TD), 'image' => $this->getAssetsUrl('inserting-media-dialog.gif'), 'description' => \__('Inserting media into a post or page can be stressful. Use folders to organize your media library!', REAL_UTILS_TD), 'link' => self::PRO_LINK],
+            'attachment-details' => ['title' => \__('File finally found?', 'devowl-wp-real-utils'), 'image' => $this->getAssetsUrl('full-control.gif'), 'description' => \__('Your WordPress site will certainly continue to grow. Organize your media library with folders!', 'devowl-wp-real-utils'), 'link' => self::PRO_LINK],
+            'insert-dialog' => ['title' => \__('Does it take long to find a file?', 'devowl-wp-real-utils'), 'image' => $this->getAssetsUrl('inserting-media-dialog.gif'), 'description' => \__('Inserting media into a post or page can be stressful. Use folders to organize your media library!', 'devowl-wp-real-utils'), 'link' => self::PRO_LINK],
         ];
     }
 }

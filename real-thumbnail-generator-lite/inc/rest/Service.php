@@ -70,13 +70,13 @@ class Service
         $thumbnailFilename = $request->get_param('thumbnailFilename');
         $chunkSize = $request->get_param('chunkSize');
         if ($chunkSize < 1) {
-            return new WP_Error('rest_rtg_invalid_chunk', \__('Please use a chunk size greater than 0!', RTG_TD));
+            return new WP_Error('rest_rtg_invalid_chunk', \__('Please use a chunk size greater than 0!', 'real-thumbnail-generator-lite'));
         }
         // Verify if schema is valid
         if (!empty($thumbnailFolder) || !empty($thumbnailFilename)) {
             $verify = Editor::getInstance()->testThumbnailPath($thumbnailFolder, $thumbnailFilename);
             if (\count($verify['errors']) > 0) {
-                return new WP_Error('rest_rtg_invalid_schema', \__('The defined Thumbnail folder and file name is not usable. Please check that it is syntactically correct!', RTG_TD), ['verify' => $verify]);
+                return new WP_Error('rest_rtg_invalid_schema', \__('The defined Thumbnail folder and file name is not usable. Please check that it is syntactically correct!', 'real-thumbnail-generator-lite'), ['verify' => $verify]);
             }
         }
         \update_option(RTG_OPT_PREFIX . '_thumbnail_folder', $thumbnailFolder);
@@ -111,7 +111,7 @@ class Service
     public static function permit($cap = 'upload_files')
     {
         if (!\current_user_can($cap)) {
-            return new WP_Error('rest_rtg_forbidden', \__('Forbidden'), ['status' => 403]);
+            return new WP_Error('rest_rtg_forbidden', \__('Forbidden', 'real-thumbnail-generator-lite'), ['status' => 403]);
         }
         return null;
     }

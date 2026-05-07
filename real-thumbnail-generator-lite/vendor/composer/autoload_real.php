@@ -34,8 +34,8 @@ class ComposerAutoloaderInit86605978a0ea4fbdfd0a8fe1c6da3105
 
         $filesToLoad = \Composer\Autoload\ComposerStaticInit86605978a0ea4fbdfd0a8fe1c6da3105::$files;
         $requireFile = \Closure::bind(static function ($fileIdentifier, $file) {
-            if (empty($GLOBALS['__composer_autoload_files'][$fileIdentifier])) {
-                $GLOBALS['__composer_autoload_files'][$fileIdentifier] = true;
+            if (empty($GLOBALS['__composer_autoload_files_real-thumbnail-generator'][$fileIdentifier])) {
+                $GLOBALS['__composer_autoload_files_real-thumbnail-generator'][$fileIdentifier] = true;
 
                 require $file;
             }

@@ -168,7 +168,7 @@ class Announcement
      */
     public function getGraphicUrl()
     {
-        return !empty($this->graphicUrl) ? \esc_url($this->graphicUrl) : null;
+        return !empty($this->graphicUrl) ? $this->graphicUrl : null;
     }
     /**
      * Self-explanatory.
@@ -177,7 +177,7 @@ class Announcement
      */
     public function getGraphicUrlRetina()
     {
-        return !empty($this->graphicUrlRetina) ? \esc_url($this->graphicUrlRetina) : null;
+        return !empty($this->graphicUrlRetina) ? $this->graphicUrlRetina : null;
     }
     /**
      * Self-explanatory.
@@ -186,7 +186,7 @@ class Announcement
      */
     public function getGraphicFileLink()
     {
-        return !empty($this->graphicFileLink) ? \esc_url($this->graphicFileLink) : null;
+        return !empty($this->graphicFileLink) ? $this->graphicFileLink : null;
     }
     /**
      * Self-explanatory.
@@ -195,7 +195,7 @@ class Announcement
      */
     public function getTitle()
     {
-        return \wp_kses_post($this->title);
+        return $this->title;
     }
     /**
      * Self-explanatory.
@@ -204,7 +204,7 @@ class Announcement
      */
     public function getText()
     {
-        return \wp_kses_post($this->text);
+        return $this->text;
     }
     /**
      * Self-explanatory.
@@ -231,7 +231,7 @@ class Announcement
      */
     public function getSeverity()
     {
-        return \esc_attr($this->severity);
+        return $this->severity;
     }
     /**
      * Self-explanatory.
