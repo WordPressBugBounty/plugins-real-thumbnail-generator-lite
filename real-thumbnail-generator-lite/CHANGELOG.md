@@ -3,6 +3,104 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.6.142 (2026-05-27)
+
+
+### Bug Fixes
+
+* prevent media toolbar overflow hiding plugin buttons on WordPress 7.0+ grid layout (CU-869dety0g)
+
+
+<details><summary>Dependency updates @devowl-wp/real-utils 1.14.24</summary>
+
+
+**_Purpose of dependency:_** _Create cross-selling ads, about page, rating and newsletter input for WP Real plugins._
+##### Bug Fixes
+
+* images not shown in Welcome page for Real Cookie Banner PRO (CU-869dewjvn)</details>
+
+
+
+
+
+## 2.6.141 (2026-05-20) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.10.0</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Features
+
+* redesign cart-abandonment email and ship opt-out flow (CU-869cmgnej)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.9.1</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Code Refactoring
+
+* migrate retypeapp to rspress (CU-869dcazu8)
+
+
+##### Continuous Integration
+
+* inject devowl-io-production-design-apply bundle into review-app wordpress container via S3 ensure-bundle + docker cp (CU-869ckvgg2)</details>
+
+<details><summary>Development dependency update @devowl-wp/monorepo-utils 0.2.29</summary>
+
+
+**_Purpose of dependency:_** _Predefined monorepo utilities and tasks._
+##### Code Refactoring
+
+* migrate retypeapp to rspress (CU-869dcazu8)</details>
+
+
+
+
+
+## 2.6.140 (2026-05-13) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.9.0</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Code Refactoring
+
+* docker-compose network governance for devowl-wp stacks, enhancing service exposure and internal network management (CU-869c51h34)
+
+
+##### Continuous Integration
+
+* add endpoint wait functionality for SeaweedFS services readiness (CU-869c7xrrv)
+* every docker review deploy gets a dedicated docker stack name coupled to the Gitlab CI job id (CU-869d915w8)
+
+
+##### Features
+
+* enforce package-tier import boundaries via dependency-cruiser (CU-869d0qyx8)</details>
+
+<details><summary>Development dependency update @devowl-wp/node-gitlab-ci 0.8.20</summary>
+
+
+**_Purpose of dependency:_** _Create dynamic GitLab CI pipelines in JavaScript or TypeScript for each project. Reuse and inherit instructions and avoid duplicate code!_
+##### Continuous Integration
+
+* every docker review deploy gets a dedicated docker stack name coupled to the Gitlab CI job id (CU-869d915w8)</details>
+
+
+
+
+
 ## 2.6.139 (2026-05-07)
 
 

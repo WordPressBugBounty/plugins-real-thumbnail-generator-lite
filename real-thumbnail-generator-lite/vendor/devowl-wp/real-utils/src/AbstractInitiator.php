@@ -91,13 +91,13 @@ abstract class AbstractInitiator
     /**
      * Get the external URL to assets. The default implementation relies on
      * "wp-{TD}". Why TD? The text domain is currently always the same as the slug,
-     * even if we are using the lite version. Please ensure a trailing slash, if you override it!
+     * even if we are using the lite or pro version. Please ensure a trailing slash, if you override it!
      *
      * @param string $path
      */
     public function getAssetsUrl($path = '')
     {
-        $assetsSlug = \preg_replace('/-lite$/', '', $this->getPluginSlug());
+        $assetsSlug = \preg_replace('/-(?:lite|pro)$/', '', $this->getPluginSlug());
         return Core::getInstance()->getBaseAssetsUrl(\sprintf('wp-%s/%s', $assetsSlug, $path));
     }
     /**
