@@ -3,6 +3,74 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.6.145 (2026-07-02)
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Dependency updates @devowl-wp/utils 1.20.26</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Build System
+
+* add support for optional post-command execution in npm libs task (CU-869duqk49)
+
+
+##### Performance Improvements
+
+* implement animate.css subset for client-side injection to enhance performance and reduce render-blocking requests (CU-869duqk49)</details>
+
+<details><summary>Development dependency update @devowl-wp/react-utils 1.0.24</summary>
+
+
+**_Purpose of dependency:_** _Provide various React utils, side effect free and tree shakeable._
+##### Code Refactoring
+
+* improve usePlainCss hook and add injectPlainCss utility for dynamic style management (CU-869duqk49)</details>
+
+
+
+
+
+## 2.6.144 (2026-07-01) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/continuous-localization 0.8.41</summary>
+
+
+**_Purpose of dependency:_** _Provide a CLI to push and pull localization files from different translation management systems._
+##### Bug Fixes
+
+* preserve UTF-8 in Weblate PO to i18next JSON conversion (CU-869du49xe)</details>
+
+
+
+
+
+## 2.6.143 (2026-06-12) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/continuous-localization 0.8.40</summary>
+
+
+**_Purpose of dependency:_** _Provide a CLI to push and pull localization files from different translation management systems._
+##### Bug Fixes
+
+* canonicalize POT with msgcat before Weblate upload (CU-869dgah96)</details>
+
+
+
+
+
 ## 2.6.142 (2026-05-27)
 
 

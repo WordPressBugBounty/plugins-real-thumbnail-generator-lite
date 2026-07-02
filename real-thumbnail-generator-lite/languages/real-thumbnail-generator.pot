@@ -13,37 +13,15 @@ msgstr ""
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 
-#. Plugin Name of the plugin
-#: index.php
-msgid "Real Thumbnail Generator"
-msgstr ""
-
-#. Plugin URI of the plugin
-#: index.php
-msgid "https://devowl.io/"
-msgstr ""
-
-#. Description of the plugin
-#: index.php
-msgid "Single or mass image regeneration for your WordPress media thumbnails. Create a custom thumbnail file structure for all your images."
-msgstr ""
-
-#. Author of the plugin
-#: index.php
-msgid "devowl.io"
-msgstr ""
-
-#. Author URI of the plugin
-#: index.php
-msgid "https://devowl.io"
-msgstr ""
-
 #: inc/AdInitiator.php:59
 msgid "Regenerate all your media in bulk"
 msgstr ""
 
 #: inc/AdInitiator.php:60
-msgid "Navigate to your media library and press the \"Regenerate Thumbnails\" button. A new dialog will open where you can regenerate your all thumbnails in media library with one click. Fast and efficient!"
+msgid ""
+"Navigate to your media library and press the \"Regenerate Thumbnails\" "
+"button. A new dialog will open where you can regenerate your all thumbnails "
+"in media library with one click. Fast and efficient!"
 msgstr ""
 
 #: inc/AdInitiator.php:70
@@ -51,7 +29,11 @@ msgid "Custom thumbnail upload structure"
 msgstr ""
 
 #: inc/AdInitiator.php:71
-msgid "Have you ever looked at the URL paths of your media uploads? Not really expressive. But this is exactly what is important to ensure that your images and the pages on which they are used get a good ranking in search engines. Improve your ranking with physically reordered uploads!"
+msgid ""
+"Have you ever looked at the URL paths of your media uploads? Not really "
+"expressive. But this is exactly what is important to ensure that your images "
+"and the pages on which they are used get a good ranking in search engines. "
+"Improve your ranking with physically reordered uploads!"
 msgstr ""
 
 #: inc/AdInitiator.php:79
@@ -59,23 +41,35 @@ msgid "Rich meta data and detect unused files"
 msgstr ""
 
 #: inc/AdInitiator.php:80
-msgid "When you open a single media file, you can view a list of all registered thumbnail sizes."
+msgid ""
+"When you open a single media file, you can view a list of all registered "
+"thumbnail sizes."
 msgstr ""
 
 #: inc/AdInitiator.php:92
-msgid "In the PRO version you can also delete unused thumbnail sizes - this can be done for one or all files with one click."
+msgid ""
+"In the PRO version you can also delete unused thumbnail sizes - this can be "
+"done for one or all files with one click."
 msgstr ""
 
-#: inc/AdInitiator.php:108
-#: inc/view/View.php:31
-#: inc/view/View.php:120
+#: inc/AdInitiator.php:108 inc/view/View.php:31 inc/view/View.php:120
 msgid "Regenerate Thumbnails"
+msgstr ""
+
+#: inc/Core.php:69
+msgid "https://devowl.io/go/real-thumbnail-generator?source=rtg-lite"
+msgstr ""
+
+#: inc/RpmInitiator.php:60
+msgid ""
+"https://devowl.io/knowledge-base/codecanyon-where-can-i-find-my-license-key/"
 msgstr ""
 
 #. translators:
 #: inc/attachment/Regenerate.php:250
 #, php-format
-msgid "The thumbnails of image ID %d could not be generated for an unknown reason."
+msgid ""
+"The thumbnails of image ID %d could not be generated for an unknown reason."
 msgstr ""
 
 #: inc/attachment/Thumbnail.php:81
@@ -106,10 +100,6 @@ msgstr ""
 msgid "Greater than original"
 msgstr ""
 
-#: inc/Core.php:69
-msgid "https://devowl.io/go/real-thumbnail-generator?source=rtg-lite"
-msgstr ""
-
 #: inc/editor/Editor.php:153
 msgid "The filename is not valid"
 msgstr ""
@@ -127,7 +117,9 @@ msgid "This feature is not available in the free version."
 msgstr ""
 
 #: inc/overrides/pro/attachment/Thumbnail.php:80
-msgid "One or more thumbnail sizes could not be deleted. Please check the read and write permissions of the upload folder (usually wp-content/uploads/)!"
+msgid ""
+"One or more thumbnail sizes could not be deleted. Please check the read and "
+"write permissions of the upload folder (usually wp-content/uploads/)!"
 msgstr ""
 
 #: inc/overrides/pro/attachment/Thumbnail.php:107
@@ -143,15 +135,13 @@ msgid "Please use a chunk size greater than 0!"
 msgstr ""
 
 #: inc/rest/Service.php:93
-msgid "The defined Thumbnail folder and file name is not usable. Please check that it is syntactically correct!"
+msgid ""
+"The defined Thumbnail folder and file name is not usable. Please check that "
+"it is syntactically correct!"
 msgstr ""
 
 #: inc/rest/Service.php:137
 msgid "Forbidden"
-msgstr ""
-
-#: inc/RpmInitiator.php:60
-msgid "https://devowl.io/knowledge-base/codecanyon-where-can-i-find-my-license-key/"
 msgstr ""
 
 #: inc/view/View.php:55
@@ -168,7 +158,33 @@ msgstr ""
 msgid "More"
 msgstr ""
 
-#: inc/view/View.php:75
-#: inc/view/View.php:97
+#: inc/view/View.php:75 inc/view/View.php:97
 msgid "Regenerate"
+msgstr ""
+
+#. Plugin Name of the plugin
+#: index.php
+msgid "Real Thumbnail Generator"
+msgstr ""
+
+#. Description of the plugin
+#: index.php
+msgid ""
+"Single or mass image regeneration for your WordPress media thumbnails. "
+"Create a custom thumbnail file structure for all your images."
+msgstr ""
+
+#. Author of the plugin
+#: index.php
+msgid "devowl.io"
+msgstr ""
+
+#. Author URI of the plugin
+#: index.php
+msgid "https://devowl.io"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: index.php
+msgid "https://devowl.io/"
 msgstr ""
