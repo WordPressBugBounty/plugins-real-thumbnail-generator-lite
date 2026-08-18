@@ -8,7 +8,7 @@
  * Description:     Single or mass image regeneration for your WordPress media thumbnails. Create a custom thumbnail file structure for all your images.
  * Author:          devowl.io
  * Author URI:      https://devowl.io
- * Version:                                                                                                                    2.6.145
+ * Version:                                                                                                                         2.7.0
  * Text Domain:     real-thumbnail-generator-lite
  * Domain Path:     /languages
  * License:         GPLv2 or later
@@ -31,7 +31,7 @@ define('RTG_ROOT_SLUG', 'devowl-wp');
 define('RTG_SLUG', basename(RTG_PATH));
 define('RTG_INC', RTG_PATH . '/inc/');
 define('RTG_MIN_PHP', '7.4.0');
-define('RTG_MIN_WP', '5.9.0');
+define('RTG_MIN_WP', '6.1.0');
 define('RTG_NS', 'DevOwl\\RealThumbnailGenerator');
 define('RTG_DB_PREFIX', 'rtg'); // The table name prefix wp_{prefix}
 define('RTG_OPT_PREFIX', 'rtg'); // The option name prefix in wp_options
