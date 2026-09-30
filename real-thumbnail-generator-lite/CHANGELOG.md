@@ -3,6 +3,361 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2.7.7 (2026-09-29)
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Dependency updates @devowl-wp/real-product-manager-wp-client 1.22.4</summary>
+
+
+**_Purpose of dependency:_** _A WordPress client for Real Product Manager_
+##### Bug Fixes
+
+* allow Multisite license save when another site is already licensed (CU-869emd756)
+* handle featureFlags as objects or arrays in License and LicenseActivation classes (CU-869envwq6)</details>
+
+<details><summary>Dependency updates @devowl-wp/utils 1.20.37</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Bug Fixes
+
+* skip the language-pack and source-map offload when nothing was built (CU-869etm54z)
+
+
+##### Performance Improvements
+
+* optimize pagespeed by externalizing localized payload delivery (experimental opt-in, CU-869em5f1b)</details>
+
+
+
+
+
+## 2.7.6 (2026-09-29) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Dependency updates @devowl-wp/freemium 1.3.153</summary>
+
+
+**_Purpose of dependency:_** _Make your plugin to a freemium plugin with predefined Envato support_
+##### Code Refactoring
+
+* enforce no top-level side effects via eslint-plugin-top (CU-869f670uj)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-product-manager-wp-client 1.22.3</summary>
+
+
+**_Purpose of dependency:_** _A WordPress client for Real Product Manager_
+##### Code Refactoring
+
+* enforce no top-level side effects via eslint-plugin-top (CU-869f670uj)</details>
+
+<details><summary>Dependency updates @devowl-wp/real-utils 1.14.37</summary>
+
+
+**_Purpose of dependency:_** _Create about page, rating and newsletter input for WP Real plugins._
+##### Code Refactoring
+
+* enforce no top-level side effects via eslint-plugin-top (CU-869f670uj)</details>
+
+<details><summary>Dependency updates @devowl-wp/utils 1.20.36</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Code Refactoring
+
+* enforce no top-level side effects via eslint-plugin-top (CU-869f670uj)
+
+
+##### Tests
+
+* isolate Vitest fake timers from concurrent suites (CU-869f2923g)</details>
+
+<details><summary>Development dependency update @devowl-wp/api 1.13.2</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Code Refactoring
+
+* enforce no top-level side effects via eslint-plugin-top (CU-869f670uj)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.9.3</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Bug Fixes
+
+* keep failed translation status in CI summary (CU-319766g)
+
+
+##### Code Refactoring
+
+* enforce no top-level side effects via eslint-plugin-top (CU-869f670uj)
+* replace docker cp with dowl service-cp for plugin builds and enhance service execution scripts (CU-869f60ccg)
+
+
+##### Continuous Integration
+
+* add endpoint wait functionality for Docker E2E tests (CU-869ep8z6q)
+* cache node_modules_cache for backend builds so i18n can skip (CU-869f7c5ad)
+* clone Docker images with regctl instead of DinD (CU-869f7c5ad)
+* fix semver CI summary changelogs after loglevel info (CU-869f7c5ad)
+* full clone for semver/release/secret scanner instead of unshallow (CU-869f7c5ad)
+* lower semver lerna loglevel from silly to info (CU-869f7c5ad)
+* materialize install stubs in gitlab-ci image for fast Templates.Install cp -a (CU-869f7c5ad)
+* pin install.tar ownership for reproducible hashes
+* quiet git fetch --unshallow in semver and secret scanner (CU-869f7c5ad)
+* replace backend pnpm deploy with turbo prune Docker context (CU-869f7c5ad)
+* reuse Docker layers across runners via inline cache-from (CU-869f7c5ad)
+* set global GIT_DEPTH to 1 for faster get_sources (CU-869f7c5ad)
+* skip install job when install.tar sha matches image label (CU-869f7c5ad)
+* skip install/validate/review on new feature branch seed (CU-869f7c5ad)
+
+
+##### Maintenance
+
+* add new docker-compose commands for service management in package.json and update CI scripts to use them (CU-869f60ccg)</details>
+
+<details><summary>Development dependency update @devowl-wp/continuous-localization 0.9.0</summary>
+
+
+**_Purpose of dependency:_** _Provide a CLI to push and pull localization files from different translation management systems._
+##### Bug Fixes
+
+* exclude cachebusters from i18n checksum by default (CU-869f7c5ad)
+* skip i18n rebuild on package version bumps (CU-869f7c5ad)
+
+
+##### Code Refactoring
+
+* enforce no top-level side effects via eslint-plugin-top (CU-869f670uj)
+
+
+##### Features
+
+* skip Weblate component clone when MR target digest matches (CU-869f7c5ad)
+* skip Weblate source upload when digest is unchanged (CU-869f7c5ad)</details>
+
+<details><summary>Development dependency update @devowl-wp/eslint-config 0.3.2</summary>
+
+
+**_Purpose of dependency:_** _Provide eslint configuration for our complete monorepo._
+##### Code Refactoring
+
+* enforce no top-level side effects via eslint-plugin-top (CU-869f670uj)
+
+
+##### Continuous Integration
+
+* materialize install stubs in gitlab-ci image for fast Templates.Install cp -a (CU-869f7c5ad)</details>
+
+<details><summary>Development dependency update @devowl-wp/monorepo-utils 0.2.31</summary>
+
+
+**_Purpose of dependency:_** _Predefined monorepo utilities and tasks._
+##### Code Refactoring
+
+* enforce no top-level side effects via eslint-plugin-top (CU-869f670uj)
+
+
+##### Continuous Integration
+
+* replace backend pnpm deploy with turbo prune Docker context (CU-869f7c5ad)
+* speed up semver/changelogs with shared pnpm graph and perl extract (CU-869f7c5ad)</details>
+
+<details><summary>Development dependency update @devowl-wp/node-gitlab-ci 0.8.22</summary>
+
+
+**_Purpose of dependency:_** _Create dynamic GitLab CI pipelines in JavaScript or TypeScript for each project. Reuse and inherit instructions and avoid duplicate code!_
+##### Bug Fixes
+
+* avoid ts config deadlock when two pipelines race (CU-869f7c5ad)
+* keep failed translation status in CI summary (CU-319766g)
+* truncate CI summary snippet title to 255 chars (CU-319766g)
+
+
+##### Code Refactoring
+
+* enforce no top-level side effects via eslint-plugin-top (CU-869f670uj)</details>
+
+<details><summary>Development dependency update @devowl-wp/react-utils 1.0.27</summary>
+
+
+**_Purpose of dependency:_** _Provide various React utils, side effect free and tree shakeable._
+##### Code Refactoring
+
+* enforce no top-level side effects via eslint-plugin-top (CU-869f670uj)</details>
+
+<details><summary>Development dependency update @devowl-wp/webpack-config 0.2.62</summary>
+
+
+**_Purpose of dependency:_** _Webpack config builder for multiple ecosystems like standalone React frontends, Antd, Preact and WordPress._
+##### Code Refactoring
+
+* enforce no top-level side effects via eslint-plugin-top (CU-869f670uj)</details>
+
+
+
+
+
+## 2.7.5 (2026-09-03) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Dependency updates @devowl-wp/utils 1.20.35</summary>
+
+
+**_Purpose of dependency:_** _Utility functionality for all your WordPress plugins._
+##### Bug Fixes
+
+* remove vendor dot-directories during plugin build (CU-869eu5jnh)</details>
+
+<details><summary>Development dependency update @devowl-wp/api 1.13.1</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Code Refactoring
+
+* enhance contract type handling and OpenAPI generation (CU-869eqzrx6)</details>
+
+
+
+
+
+## 2.7.4 (2026-08-31) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.13.0</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* api-reference did no longer render (CU-869eqh3r0)
+
+
+##### Features
+
+* add SSE Event-Source contracts for typed realtime streams (CU-869eqh3r0)</details>
+
+
+
+
+
+## 2.7.3 (2026-08-24) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Dependency updates @devowl-wp/real-product-manager-wp-client 1.22.0</summary>
+
+
+**_Purpose of dependency:_** _A WordPress client for Real Product Manager_
+##### Features
+
+* implement percentage-based feature flagging for WordPress clients (CU-869envwq6)</details>
+
+
+
+
+
+## 2.7.2 (2026-08-21) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/api 1.12.2</summary>
+
+
+**_Purpose of dependency:_** _Shared typings for all Node.js backends and frontends._
+##### Bug Fixes
+
+* offload high-throughput locks from etcd to Redis Redlock (CU-869emktev)</details>
+
+
+
+
+
+## 2.7.1 (2026-08-20) (not released)
+
+**Note:** This version of the package has not (yet) been released publicly. This happens if changes have been made in dependencies that do not affect this package (e.g. changes for the development of the package). The changes will be rolled out with the next official update.
+
+**Note:** This package (@devowl-wp/real-thumbnail-generator) has been updated because a dependency, which is also shipped with this package, has changed.
+
+
+<details><summary>Development dependency update @devowl-wp/continuous-integration 0.9.2</summary>
+
+
+**_Purpose of dependency:_** _DevOps macros, job templates and jobs for Gitlab CI and @devowl-wp/node-gitlab-ci._
+##### Bug Fixes
+
+* add parent flush lock and pin production app images (CU-869egkb98)
+* update FTP upload command for Envato zips to use secure connection (CU-869ejmez7)
+
+
+##### Build System
+
+* ship Complyforce production deploy on swarm_public2 (CU-869c51h34)
+* split production deploy by Compose profiles for dual public Swarms (CU-869d89by6)
+
+
+##### Code Refactoring
+
+* migrate storage-dev off MinIO to OVH and SeaweedFS (CU-869e14thv)
+
+
+##### Continuous Integration
+
+* gate docker validate deploy config on protected branches (CU-869egkb98)
+* include ensure-bundle.sh in INSTALL_FILES for Docker build context (CU-869ckvgg2)
+* migrate ACME cert generation from lego v4 to v5 CLI (CU-869chp8wu)
+* remove redundant lego migrate commands for ACME cert generation (CU-869chp8wu)
+
+
+##### Maintenance
+
+* add public DNS resolvers for ACME challenge in lego cert generation (CU-869chp8wu)
+* add Pulumi bridged-provider SDK paths to install files for install/bootstrap (CU-869e14thv)
+* add Pulumi infrastructure package for S3 provisioning (CU-869e14thv)
+* dynamic mc aliases from environment variables (CU-869e14thv)
+* migrate storage-dev prerelease workloads to OVH buckets and remove webpack-json-stats (CU-869e14thv)
+* migrate workloads to OVH buckets, including container-fs and tls-certs (CU-869e14thv)
+* squash multiple commits (original ae7282422e840405b144c67e641fd60b04ab932c, CU-869c8tfch)
+* upgrade Playwright 1.56.1 to 1.60.0 to fix extract-zip hang on Node >= 24.16.0 (CU-869dej6b8)
+
+
+##### Performance Improvements
+
+* stop per-session MCP RAM blowups via shared mcpproxy daemon (CU-869e9en4x)</details>
+
+<details><summary>Development dependency update @devowl-wp/eslint-config 0.3.1</summary>
+
+
+**_Purpose of dependency:_** _Provide eslint configuration for our complete monorepo._
+##### Maintenance
+
+* reject MobX decorators without makeObservable via ESLint (CU-869ejmez7)</details>
+
+
+
+
+
 # 2.7.0 (2026-08-18)
 
 

@@ -85,7 +85,7 @@ class LicenseActivation
             $uuid = $license->getUuid();
             $result = $license->getClient()->post($code, $uuid, $installationType, $telemetry, $newsletterOptIn, $firstName, $email);
             if (!\is_wp_error($result)) {
-                $this->persistLocalLicenseActivationFromRemote($result['licenseActivation']);
+                $this->persistLocalLicenseActivationFromRemote($result['licenseActivation'], $result['featureFlags'] ?? []);
                 $this->getLicense()->getTelemetryData()->probablyTransmit();
                 $this->getLicense()->getPluginUpdate()->getLicensedBlogIds(\true);
             }
@@ -130,10 +130,12 @@ class LicenseActivation
     /**
      * Persist a remote licenseActivation payload into local options (activate + reclaim success).
      * Caller must already have switched to the license blog when in a multisite.
+     * Sibling API `featureFlags` are merged into the stored licenseActivation blob.
      *
      * @param array $licenseActivation
+     * @param array<string, bool> $featureFlags Sibling feature flags from the API response
      */
-    public function persistLocalLicenseActivationFromRemote($licenseActivation)
+    public function persistLocalLicenseActivationFromRemote($licenseActivation, $featureFlags = [])
     {
         $license = $this->getLicense();
         $slug = $license->getSlug();
@@ -152,6 +154,10 @@ class LicenseActivation
         $initiator = $license->getInitiator();
         if ($initiator->isExternalUpdateEnabled()) {
             \update_option(PluginUpdateView::OPTION_NAME_ADMIN_NOTICE_LICENSE_DISMISSED_DAY_PREFIX . $initiator->getPluginSlug(), \PHP_INT_MAX);
+        }
+        if (\is_array($featureFlags) || \is_object($featureFlags)) {
+            // stdClass so empty flags json_encode as {} not []
+            $licenseActivation['featureFlags'] = (object) $featureFlags;
         }
         $license->receivedRemoteLicenseActivation($licenseActivation);
         /**
@@ -352,6 +358,34 @@ class LicenseActivation
     {
         $properties = $this->getReceivedClientProperties();
         return $properties[$key] ?? $default;
+    }
+    /**
+     * Get feature flags received from the license server for this activation.
+     * API returns them as a sibling; locally they are merged into the licenseActivation option.
+     *
+     * @return false|array<string, bool>
+     */
+    public function getReceivedFeatureFlags()
+    {
+        $received = $this->getReceived();
+        if (\is_array($received) && isset($received['featureFlags']) && (\is_array($received['featureFlags']) || \is_object($received['featureFlags']))) {
+            return (array) $received['featureFlags'];
+        }
+        return \false;
+    }
+    /**
+     * Check if a server-side feature flag is enabled for this installation.
+     *
+     * @param string $key
+     * @param bool $default
+     */
+    public function isFeatureEnabled($key, $default = \false)
+    {
+        $flags = $this->getReceivedFeatureFlags();
+        if (!\is_array($flags)) {
+            return $default;
+        }
+        return $flags[$key] ?? $default;
     }
     /**
      * Get entered license code for this activation. Can be `false` if none given. If it is

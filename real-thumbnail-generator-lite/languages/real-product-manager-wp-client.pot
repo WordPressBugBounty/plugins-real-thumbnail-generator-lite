@@ -63,7 +63,7 @@ msgid "License key"
 msgstr ""
 
 #. translators: %s: localized date and time when the license was restored
-#: license/License.php:478
+#: license/License.php:481
 #, php-format
 msgid ""
 "Your license was restored automatically on %s. This website is running on a "
@@ -72,7 +72,7 @@ msgid ""
 "you do not need to enter a license key again."
 msgstr ""
 
-#: license/License.php:541
+#: license/License.php:548
 msgid "No programmatic activation found for this plugin."
 msgstr ""
 
@@ -82,7 +82,7 @@ msgid ""
 "first!"
 msgstr ""
 
-#: license/LicenseActivation.php:223
+#: license/LicenseActivation.php:231
 msgid "Please deactivate the license before resetting the installation ID."
 msgstr ""
 

@@ -8,7 +8,7 @@
  * Description:     Single or mass image regeneration for your WordPress media thumbnails. Create a custom thumbnail file structure for all your images.
  * Author:          devowl.io
  * Author URI:      https://devowl.io
- * Version:                                                                                                                         2.7.0
+ * Version:                                                                                                                                2.7.7
  * Text Domain:     real-thumbnail-generator-lite
  * Domain Path:     /languages
  * License:         GPLv2 or later
